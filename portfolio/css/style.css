@@ -79,3 +79,29 @@ input[type = radio] {
     padding: 0;
 }
 
+
+
+/*Skills*/
+
+.skills__item:nth-child(1) {
+    background: url(../assets/svg/camera.svg) no-repeat;
+}
+
+.skills__item:nth-child(2) {
+    background: url(../assets/svg/video.svg) no-repeat;
+}
+
+.skills__item:nth-child(3) {
+    background: url(../assets/svg/image.svg) no-repeat;
+}
+
+.skills__item:nth-child(4) {
+    background: url(../assets/svg/microphone.svg) no-repeat;
+}
+
+
+/*Video*/
+
+.video {
+    background: url(../assets/img/bg_video-player.jpg) no-repeat;
+}
