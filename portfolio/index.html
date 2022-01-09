@@ -12,7 +12,11 @@
 <body>
     <header class="header">
         <div class="container header__container">
-            <a href="#" class="header__logo"></a>
+            <a href="#" class="header__logo">
+                <svg class="logo">
+                    <use xlink:href="./assets/svg/sprite.svg#logo"></use>
+                </svg>
+            </a>
             <nav class="header__nav">
                 <ul class="header__list">
                     <li class="header__item">
@@ -31,7 +35,11 @@
                         <a href="#contacts" class="header__nav-link">Contacts</a>
                     </li>
                 </ul>
-                <span class="header__switch-en">en</span>/<span class="header__switch-ru">ru</span>
+                <div class="header_switch-lang">
+                    <label><input type="radio" name="en">en</label>
+                    <span>/</span>
+                    <label><input type="radio" name="ru">ru</label>
+                </div>
             </nav>
         </div>
     </header>
