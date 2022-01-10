@@ -40,6 +40,7 @@
 
 html {
     font-family: 'Inter', sans-serif;
+    background-color: #000;
 }
 
 a {
@@ -54,10 +55,6 @@ ul {
 
 img {
     max-width: 100%;
-}
-
-input[type = radio] {
-    display: none;
 }
 
 .container {
@@ -79,7 +76,56 @@ input[type = radio] {
     padding: 0;
 }
 
+/*Header*/
 
+.header__container {
+    width: 1440px;
+    height: 90px;
+    padding: 25px 20px;
+    display: flex;
+    background: url(../assets/img/bg_hero.jpg) no-repeat;
+    background-position: center 0;
+}
+
+.header__logo {
+    width: 50px;
+    height: 40px;
+    fill: #FFFFFF;
+}
+
+.header__nav {
+    margin-left: auto;
+}
+
+.header__nav-link {
+    font-size: 20px;
+    line-height: 50px;
+    color: #FFFFFF;
+}
+
+.header__list {
+    display: flex;
+}
+
+.header__item {
+    margin-right: 30px;
+}
+
+.header_switch {
+    font-size: 20px;
+    line-height: 50px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.header__switch-en {
+    margin-right: 9px;
+    color: #BDAE82;
+}
+
+.header__switch-ru {
+    margin-left: 8px;
+}
 
 /*Skills*/
 
