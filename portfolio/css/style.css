@@ -105,3 +105,10 @@ input[type = radio] {
 .video {
     background: url(../assets/img/bg_video-player.jpg) no-repeat;
 }
+
+
+/*Contacts*/
+
+.contacts {
+    background: url(../assets/img/bg_contacts.jpg) no-repeat;
+}
