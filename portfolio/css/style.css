@@ -40,7 +40,7 @@
 
 html {
     font-family: 'Inter', sans-serif;
-    background-color: #000;
+    /*background-color: #000;*/
 }
 
 a {
@@ -81,7 +81,7 @@ img {
 .header__container {
     width: 1440px;
     height: 90px;
-    padding: 25px 20px;
+    padding-top: 20px;
     display: flex;
     background: url(../assets/img/bg_hero.jpg) no-repeat;
     background-position: center 0;
@@ -89,7 +89,7 @@ img {
 
 .header__logo {
     width: 50px;
-    height: 40px;
+    height: 50px;
     fill: #FFFFFF;
 }
 
@@ -119,12 +119,49 @@ img {
 }
 
 .header__switch-en {
-    margin-right: 9px;
+    margin-right: 5px;
     color: #BDAE82;
 }
 
 .header__switch-ru {
-    margin-left: 8px;
+    margin-left: 5px;
+}
+
+/*Hero*/
+
+.hero__container {
+    padding-top: 160px;
+    padding-left: 80px;
+    height: 820px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: url(../assets/img/bg_hero.jpg) no-repeat;
+    background-position: center -90px;
+    color: #FFFFFF;
+}
+
+.hero__title {
+    margin-bottom: 10px;
+    font-size: 60px;
+    line-height: 2;
+}
+
+.hero__descr {
+    margin-top: 0;
+    margin-bottom: 25px;
+    width: 35%;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.hero__btn {
+    padding: 8px 72px;
+    width: 220px;
+    height: 55px;
+    background-color: #BDAE82;
+    font-size: 20px;
+    line-height: 2;
 }
 
 /*Skills*/
@@ -148,13 +185,14 @@ img {
 
 /*Video*/
 
-.video {
-    background: url(../assets/img/bg_video-player.jpg) no-repeat;
+.video__player {
+    width: 1400px;
+    height: 705px;
 }
-
 
 /*Contacts*/
 
-.contacts {
+.contacts__container {
     background: url(../assets/img/bg_contacts.jpg) no-repeat;
+    background-position: center 0;
 }
