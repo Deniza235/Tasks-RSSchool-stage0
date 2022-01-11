@@ -107,8 +107,12 @@ img {
     display: flex;
 }
 
-.header__item {
-    margin-right: 30px;
+.header__list:last-child {
+    margin-right: 32px;
+}
+
+.header__item:not(:last-child) {
+    margin-right: 31px;
 }
 
 .header_switch {
@@ -123,8 +127,8 @@ img {
     color: #BDAE82;
 }
 
-.header__switch-ru {
-    margin-left: 5px;
+.header__switch-slash {
+    margin-right: 2px;
 }
 
 /*Hero*/
@@ -166,20 +170,89 @@ img {
 
 /*Skills*/
 
-.skills__item:nth-child(1) {
+.skills__container {
+    height: 482px;
+    background-color: #000;
+}
+
+.skills__title {
+    margin-bottom: 60px;
+    padding-top: 100px;
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    line-height: 2;
+    color: #BDAE82;
+}
+.skills__title::before {
+    content: "";
+    position: absolute;
+    width: 272px;
+    top: 139px;
+    left: 350px;
+    border: 1px solid #BDAE82;
+}
+
+.skills__title::after {
+    content: "";
+    position: absolute;
+    width: 272px;
+    top: 139px;
+    right: 350px;
+    border: 1px solid #BDAE82;
+}
+
+.skills__card {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.skills__card:not(:last-child) {
+    margin-right: 40px;
+}
+
+.skills__list {
+    width: 320px;
+    height: 240px;
+    padding: 80px 20px 8px;
+}
+
+.skills__list:nth-child(1) {
     background: url(../assets/svg/camera.svg) no-repeat;
+    background-position: top center;
 }
 
-.skills__item:nth-child(2) {
+.skills__list:nth-child(2) {
     background: url(../assets/svg/video.svg) no-repeat;
+    background-position: top center;
 }
 
-.skills__item:nth-child(3) {
+.skills__list:nth-child(3) {
     background: url(../assets/svg/image.svg) no-repeat;
+    background-position: top center;
 }
 
-.skills__item:nth-child(4) {
+.skills__list:nth-child(4) {
     background: url(../assets/svg/microphone.svg) no-repeat;
+    background-position: top center;
+}
+
+.skills__item-title {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 2;
+    color: #FFFFFF;
+}
+
+.skills__item-descr {
+    text-align: center;
+    font-size: 18px;
+    line-height: 2;
+    color: #FFFFFF;
+
 }
 
 
