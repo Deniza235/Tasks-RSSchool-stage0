@@ -318,9 +318,50 @@ img {
 
 /*Video*/
 
+
+.video__title {
+    margin-bottom: 60px;
+    position: relative;
+    padding-top: 100px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 2;
+    color: #BDAE82;
+}
+
+.video__title::before {
+    content: "";
+    position: absolute;
+    width: 270px;
+    top: 139px;
+    left: 350px;
+    border: 1px solid #BDAE82;
+}
+
+.video__title::after {
+    content: "";
+    position: absolute;
+    width: 269px;
+    top: 139px;
+    right: 350px;
+    border: 1px solid #BDAE82;
+}
+
 .video__player {
-    width: 1400px;
-    height: 705px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.video__play-btn {
+    position: absolute;
+    fill: #FFFFFF;
+}
+
+.video__player-icon {
+    width: 130px;
+    height: 130px;
 }
 
 /*Contacts*/
