@@ -40,7 +40,7 @@
 
 html {
     font-family: 'Inter', sans-serif;
-    /*background-color: #000;*/
+    background-color: #000;
 }
 
 a {
@@ -205,6 +205,7 @@ img {
 .skills__card {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 
@@ -252,9 +253,68 @@ img {
     font-size: 18px;
     line-height: 2;
     color: #FFFFFF;
-
 }
 
+/*Portfolio*/
+
+.portfolio__title {
+    margin-bottom: 60px;
+    position: relative;
+    padding-top: 100px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 2;
+    color: #BDAE82;
+}
+
+.portfolio__title::before {
+    content: "";
+    position: absolute;
+    width: 236px;
+    top: 139px;
+    left: 350px;
+    border: 1px solid #BDAE82;
+}
+
+.portfolio__title::after {
+    content: "";
+    position: absolute;
+    width: 239px;
+    top: 139px;
+    right: 350px;
+    border: 1px solid #BDAE82;
+}
+
+.portfolio__list-btn {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.portfolio__btn {
+    width: 220px;
+    height: 55px;
+    margin-bottom: 60px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: center;
+    border: 2px solid #BDAE82;
+    font-size: 20px;
+    line-height: 2;
+    color: #BDAE82;
+    background-color: transparent;
+}
+
+.portfolio__btn:last-child {
+    background-color: #BDAE82;
+    color: #000;
+}
+
+.portfolio__gallery-pictures {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
 
 /*Video*/
 
