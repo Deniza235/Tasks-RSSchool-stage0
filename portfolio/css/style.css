@@ -34,6 +34,13 @@
         url('../assets/fonts/Merriweather-Bold.woff') format('woff');
 }
 
+:root {
+    --font-size-regular: 20px;
+    --color-white: #FFFFFF;
+    --color-gold: #BDAE82;
+    --color-black: #000000;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -41,17 +48,17 @@
 html {
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
-    background-color: #000;
+    background-color: var(--color-black);
 }
 
 a {
     text-decoration: none;
-    color: #FFFFFF;
+    color: var(--color-white);
     transition: color 0.5s;
 }
 
 a:hover {
-    color: #BDAE82;
+    color: var(--color-gold);
 }
 
 ul {
@@ -68,14 +75,14 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-text-fill-color: #bdae82;
+    -webkit-text-fill-color: var(--color-gold);
     transition: background-color 0s ease-in-out 9000s;
 }
     
 ::placeholder {
     font-family: inherit;
-    color: #bdae82;
-    font-size: 20px;
+    color: var(--color-gold);
+    font-size: var(--font-size-regular);
     line-height: 2;
 }
 .container {
@@ -90,16 +97,37 @@ input:-webkit-autofill:active {
     font-weight: bold;
 }
 
+.title__section {
+    position: relative;
+    margin-bottom: 60px;
+    padding-top: 100px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 2;
+    color: var(--color-gold);
+}
+
 .btn {
     border: none;
     background: transparent;
     cursor: pointer;
-    padding: 0;
     transition: color 0.5s;
 }
 
 .btn:hover {
-    color: #FFFFFF;
+    color: var(--color-white);
+}
+
+.btn__set {
+    width: 220px;
+    height: 55px;
+    font-size: var(--font-size-regular);
+    line-height: 2;
+}
+
+.btn__color-gold {
+    background-color: var(--color-gold);
+    color: var(--color-black);
 }
 
 /*Header*/
@@ -117,12 +145,12 @@ input:-webkit-autofill:active {
 .header__logo {
     width: 50px;
     height: 50px;
-    fill: #FFFFFF;
+    fill: var(--color-white);
     transition: fill 0.5s;
 }
 
 .header__logo:hover {
-    fill: #BDAE82;
+    fill: var(--color-gold);
 }
 
 .header__nav {
@@ -130,9 +158,9 @@ input:-webkit-autofill:active {
 }
 
 .header__nav-link {
-    font-size: 20px;
+    font-size: var(--font-size-regular);
     line-height: 50px;
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 .header__list {
@@ -154,15 +182,15 @@ input:-webkit-autofill:active {
 }
 
 .header_switch {
-    font-size: 20px;
+    font-size: var(--font-size-regular);
     line-height: 50px;
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 .header__switch-en {
     margin-right: 5px;
-    color: #BDAE82;
+    color: var(--color-gold);
 }
 
 .header__switch-slash {
@@ -180,7 +208,7 @@ input:-webkit-autofill:active {
     align-items: flex-start;
     background: url(../assets/img/bg_hero.jpg) no-repeat;
     background-position: center -90px;
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 .hero__title {
@@ -193,42 +221,23 @@ input:-webkit-autofill:active {
     margin-top: 0;
     margin-bottom: 25px;
     width: 35%;
-    font-size: 20px;
+    font-size: var(--font-size-regular);
     line-height: 40px;
-}
-
-.hero__btn {
-    padding: 8px 72px;
-    width: 220px;
-    height: 55px;
-    background-color: #BDAE82;
-    font-size: 20px;
-    line-height: 2;
 }
 
 /*Skills*/
 
 .skills__container {
     height: 482px;
-    background-color: #000;
 }
 
-.skills__title {
-    margin-bottom: 60px;
-    padding-top: 100px;
-    position: relative;
-    text-align: center;
-    font-size: 40px;
-    line-height: 2;
-    color: #BDAE82;
-}
 .skills__title::before {
     content: "";
     position: absolute;
     width: 272px;
     top: 139px;
     left: 350px;
-    border: 1px solid #BDAE82;
+    border: 1px solid var(--color-gold);
 }
 
 .skills__title::after {
@@ -237,7 +246,7 @@ input:-webkit-autofill:active {
     width: 272px;
     top: 139px;
     right: 350px;
-    border: 1px solid #BDAE82;
+    border: 1px solid var(--color-gold);
 }
 
 .skills__card {
@@ -281,29 +290,19 @@ input:-webkit-autofill:active {
     text-align: center;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
-    font-size: 20px;
+    font-size: var(--font-size-regular);
     line-height: 2;
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 .skills__item-descr {
     text-align: center;
     font-size: 18px;
     line-height: 2;
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 /*Portfolio*/
-
-.portfolio__title {
-    margin-bottom: 60px;
-    position: relative;
-    padding-top: 100px;
-    text-align: center;
-    font-size: 40px;
-    line-height: 2;
-    color: #BDAE82;
-}
 
 .portfolio__title::before {
     content: "";
@@ -311,7 +310,7 @@ input:-webkit-autofill:active {
     width: 236px;
     top: 139px;
     left: 350px;
-    border: 1px solid #BDAE82;
+    border: 1px solid var(--color-gold);
 }
 
 .portfolio__title::after {
@@ -320,7 +319,7 @@ input:-webkit-autofill:active {
     width: 239px;
     top: 139px;
     right: 350px;
-    border: 1px solid #BDAE82;
+    border: 1px solid var(--color-gold);
 }
 
 .portfolio__list-btn {
@@ -330,22 +329,14 @@ input:-webkit-autofill:active {
 }
 
 .portfolio__btn {
-    width: 220px;
-    height: 55px;
     margin-bottom: 60px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    text-align: center;
-    border: 2px solid #BDAE82;
-    font-size: 20px;
-    line-height: 2;
-    color: #BDAE82;
-    background-color: transparent;
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
 }
 
 .portfolio__btn:last-child {
-    background-color: #BDAE82;
-    color: #000;
+    background-color: var(--color-gold);
+    color: var(--color-black);
 }
 
 .portfolio__gallery-pictures {
@@ -356,24 +347,13 @@ input:-webkit-autofill:active {
 
 /*Video*/
 
-
-.video__title {
-    margin-bottom: 60px;
-    position: relative;
-    padding-top: 100px;
-    text-align: center;
-    font-size: 40px;
-    line-height: 2;
-    color: #BDAE82;
-}
-
 .video__title::before {
     content: "";
     position: absolute;
     width: 270px;
     top: 139px;
     left: 350px;
-    border: 1px solid #BDAE82;
+    border: 1px solid var(--color-gold);
 }
 
 .video__title::after {
@@ -382,7 +362,7 @@ input:-webkit-autofill:active {
     width: 269px;
     top: 139px;
     right: 350px;
-    border: 1px solid #BDAE82;
+    border: 1px solid var(--color-gold);
 }
 
 .video__player {
@@ -394,12 +374,12 @@ input:-webkit-autofill:active {
 
 .video__play-btn {
     position: absolute;
-    fill: #FFFFFF;
+    fill: var(--color-white);
     transition: fill 0.5s;
 }
 
 .video__play-btn:hover {
-    fill: #bdae82;
+    fill: var(--color-gold);
 }
 
 .video__player-icon {
@@ -409,23 +389,13 @@ input:-webkit-autofill:active {
 
 /*Price*/
 
-.price__title {
-    margin-bottom: 60px;
-    position: relative;
-    padding-top: 100px;
-    text-align: center;
-    font-size: 40px;
-    line-height: 2;
-    color: #BDAE82;
-}
-
 .price__title::before {
     content: "";
     position: absolute;
     width: 277px;
     top: 139px;
     left: 350px;
-    border: 1px solid #BDAE82;
+    border: 1px solid var(--color-gold);
 }
 
 .price__title::after {
@@ -434,7 +404,7 @@ input:-webkit-autofill:active {
     width: 277px;
     top: 139px;
     right: 350px;
-    border: 1px solid #BDAE82;
+    border: 1px solid var(--color-gold);
 }
 
 .price__card-list {
@@ -447,7 +417,7 @@ input:-webkit-autofill:active {
     height: 505px;
     display: flex;
     flex-direction: column;
-    border: 3px solid #BDAE82;
+    border: 3px solid var(--color-gold);
 }
 
 .price__card-title {
@@ -456,7 +426,7 @@ input:-webkit-autofill:active {
     text-align: center;
     font-size: 28px;
     line-height: 2;
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 .price__card-price {
@@ -465,7 +435,7 @@ input:-webkit-autofill:active {
     text-align: center;
     font-size: 24px;
     line-height: 2;
-    color: #BDAE82;
+    color: var(--color-gold);
 }
 
 .price__card-descr {
@@ -473,7 +443,7 @@ input:-webkit-autofill:active {
     text-align: center;
     font-size: 18px;
     line-height: 2;
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 .price__card-descr:nth-last-child(2) {
@@ -481,16 +451,7 @@ input:-webkit-autofill:active {
 }
 
 .price__btn {
-    width: 220px;
-    height: 55px;
     margin: 0 auto;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    text-align: center;
-    background-color: #BDAE82;
-    font-size: 20px;
-    line-height: 2;
-    color: #000;
 }
 
 /*Contacts*/
@@ -516,7 +477,7 @@ input:-webkit-autofill:active {
     padding-top: 59px;
     font-size: 40px;
     line-height: 2;
-    color: #BDAE82;
+    color: var(--color-gold);
 }
 
 .contacts__form {
@@ -529,10 +490,10 @@ input:-webkit-autofill:active {
     height: 50px;
     margin-bottom: 20px;
     padding-left: 20px;
-    border: 2px solid #BDAE82;
-    font-size: 20px;
+    border: 2px solid var(--color-gold);
+    font-size: var(--font-size-regular);
     line-height: 2;
-    color: #bdae82;
+    color: var(--color-gold);
     background: rgba(0, 0, 0, 0.5);
 }
 
@@ -542,22 +503,11 @@ input:-webkit-autofill:active {
     margin-bottom: 30px;
     padding-left: 20px;
     resize: none;
-    border: 2px solid #BDAE82;
-    font-size: 20px;
+    border: 2px solid var(--color-gold);
+    font-size: var(--font-size-regular);
     line-height: 2;
-    color: #bdae82;
+    color: var(--color-gold);
     background: rgba(0, 0, 0, 0.5);
-}
-
-.contacts__form-btn {
-    width: 220px;
-    height: 55px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    background-color: #BDAE82;
-    font-size: 20px;
-    line-height: 2;
-    color: #000;
 }
 
 /*Footer*/
@@ -569,9 +519,9 @@ input:-webkit-autofill:active {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 20px;
+    font-size: var(--font-size-regular);
     line-height: 50px;
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 .footer__left {
@@ -596,10 +546,10 @@ input:-webkit-autofill:active {
 .footer__right-link-logo {
     width: 32px;
     height: 32px;
-    fill: #FFFFFF;
+    fill: var(--color-white);
     transition: fill 0.5s;
 }
 
 .footer__right-link-logo:hover {
-    fill: #BDAE82;
+    fill: var(--color-gold);
 }
