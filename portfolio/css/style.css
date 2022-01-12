@@ -40,12 +40,18 @@
 
 html {
     font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
     background-color: #000;
 }
 
 a {
     text-decoration: none;
     color: #FFFFFF;
+    transition: color 0.5s;
+}
+
+a:hover {
+    color: #BDAE82;
 }
 
 ul {
@@ -58,6 +64,14 @@ img {
     max-width: 100%;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: #bdae82;
+    transition: background-color 0s ease-in-out 9000s;
+}
+    
 ::placeholder {
     font-family: inherit;
     color: #bdae82;
@@ -81,6 +95,11 @@ img {
     background: transparent;
     cursor: pointer;
     padding: 0;
+    transition: color 0.5s;
+}
+
+.btn:hover {
+    color: #FFFFFF;
 }
 
 /*Header*/
@@ -90,6 +109,7 @@ img {
     height: 90px;
     padding-top: 20px;
     display: flex;
+    flex-wrap: wrap;
     background: url(../assets/img/bg_hero.jpg) no-repeat;
     background-position: center 0;
 }
@@ -98,6 +118,11 @@ img {
     width: 50px;
     height: 50px;
     fill: #FFFFFF;
+    transition: fill 0.5s;
+}
+
+.header__logo:hover {
+    fill: #BDAE82;
 }
 
 .header__nav {
@@ -112,10 +137,16 @@ img {
 
 .header__list {
     display: flex;
+    flex-wrap: wrap;
+
 }
 
 .header__list:last-child {
     margin-right: 32px;
+}
+
+.header__item {
+    transition: 0.2s;
 }
 
 .header__item:not(:last-child) {
@@ -364,6 +395,11 @@ img {
 .video__play-btn {
     position: absolute;
     fill: #FFFFFF;
+    transition: fill 0.5s;
+}
+
+.video__play-btn:hover {
+    fill: #bdae82;
 }
 
 .video__player-icon {
@@ -494,6 +530,9 @@ img {
     margin-bottom: 20px;
     padding-left: 20px;
     border: 2px solid #BDAE82;
+    font-size: 20px;
+    line-height: 2;
+    color: #bdae82;
     background: rgba(0, 0, 0, 0.5);
 }
 
@@ -504,6 +543,9 @@ img {
     padding-left: 20px;
     resize: none;
     border: 2px solid #BDAE82;
+    font-size: 20px;
+    line-height: 2;
+    color: #bdae82;
     background: rgba(0, 0, 0, 0.5);
 }
 
@@ -533,7 +575,7 @@ img {
 }
 
 .footer__left {
-    margin-right: 30px;
+    margin-right: 20px;
 }
 
 .footer__left-copyright,
@@ -543,6 +585,7 @@ img {
 
 .footer__right-list {
     display: flex;
+    flex-wrap: wrap;
     height: 32px;
 }
 
@@ -554,5 +597,9 @@ img {
     width: 32px;
     height: 32px;
     fill: #FFFFFF;
+    transition: fill 0.5s;
 }
 
+.footer__right-link-logo:hover {
+    fill: #BDAE82;
+}
