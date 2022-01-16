@@ -197,6 +197,10 @@ input:-webkit-autofill:active {
     margin-right: 2px;
 }
 
+.header__switch-ru:hover {
+    color: var(--color-gold);
+}
+
 /*Hero*/
 
 .hero__container {
@@ -255,39 +259,48 @@ input:-webkit-autofill:active {
     flex-wrap: wrap;
 }
 
-
-.skills__card:not(:last-child) {
+/*.skills__card:not(:last-child) {
     margin-right: 40px;
-}
+}*/
 
 .skills__list {
     width: 320px;
     height: 240px;
-    padding: 80px 20px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.skills__list:nth-child(1) {
-    background: url(../assets/svg/camera.svg) no-repeat;
-    background-position: top center;
+.skills__logo {
+    fill: var(--color-gold);
+    text-align: center;
 }
 
-.skills__list:nth-child(2) {
-    background: url(../assets/svg/video.svg) no-repeat;
-    background-position: top center;
+.skills__logo:hover {
+    fill: var(--color-white);
 }
 
-.skills__list:nth-child(3) {
-    background: url(../assets/svg/image.svg) no-repeat;
-    background-position: top center;
+.skills__logo:nth-child(1) {
+    width: 62px;
+    height: 50px;
 }
 
-.skills__list:nth-child(4) {
-    background: url(../assets/svg/microphone.svg) no-repeat;
-    background-position: top center;
+.skills__logo:nth-child(2) {
+    width: 60px;
+    height: 50px;
+}
+
+.skills__logo:nth-child(3) {
+    width: 66px;
+    height: 50px;
+}
+
+.skills__logo:nth-child(4) {
+    width: 32px;
+    height: 50px;
 }
 
 .skills__item-title {
-    text-align: center;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     font-size: var(--font-size-regular);
@@ -337,6 +350,10 @@ input:-webkit-autofill:active {
 .portfolio__btn:last-child {
     background-color: var(--color-gold);
     color: var(--color-black);
+}
+
+.portfolio__btn:last-child:hover {
+    color: var(--color-white);
 }
 
 .portfolio__gallery-pictures {
@@ -417,13 +434,13 @@ input:-webkit-autofill:active {
     height: 505px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     border: 3px solid var(--color-gold);
 }
 
 .price__card-title {
     margin-bottom: 19px;
     padding-top: 41px;
-    text-align: center;
     font-size: 28px;
     line-height: 2;
     color: var(--color-white);
@@ -431,8 +448,6 @@ input:-webkit-autofill:active {
 
 .price__card-price {
     margin-bottom: 20px;
-    display: block;
-    text-align: center;
     font-size: 24px;
     line-height: 2;
     color: var(--color-gold);
@@ -440,8 +455,7 @@ input:-webkit-autofill:active {
 
 .price__card-descr {
     display: block;
-    text-align: center;
-    font-size: 18px;
+        font-size: 18px;
     line-height: 2;
     color: var(--color-white);
 }
