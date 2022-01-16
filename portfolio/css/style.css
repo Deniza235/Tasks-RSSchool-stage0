@@ -36,8 +36,8 @@
 
 :root {
     --font-size-regular: 20px;
-    --color-white: #FFFFFF;
-    --color-gold: #BDAE82;
+    --color-white: #ffffff;
+    --color-gold: #bdae82;
     --color-black: #000000;
 }
 
@@ -259,11 +259,13 @@ input:-webkit-autofill:active {
     flex-wrap: wrap;
 }
 
-/*.skills__card:not(:last-child) {
+.skills__card:not(:last-child) {
     margin-right: 40px;
-}*/
+}
 
 .skills__list {
+    padding-left: 20px;
+    padding-right: 20px;
     width: 320px;
     height: 240px;
     display: flex;
@@ -272,6 +274,7 @@ input:-webkit-autofill:active {
 }
 
 .skills__logo {
+    margin-bottom: 50px;
     fill: var(--color-gold);
     text-align: center;
 }
@@ -301,6 +304,8 @@ input:-webkit-autofill:active {
 }
 
 .skills__item-title {
+    margin-top: 0;
+    margin-bottom: 21px;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     font-size: var(--font-size-regular);
@@ -309,6 +314,7 @@ input:-webkit-autofill:active {
 }
 
 .skills__item-descr {
+    margin: 0;
     text-align: center;
     font-size: 18px;
     line-height: 2;
@@ -439,8 +445,8 @@ input:-webkit-autofill:active {
 }
 
 .price__card-title {
-    margin-bottom: 19px;
-    padding-top: 41px;
+    margin-bottom: 21px;
+    padding-top: 40px;
     font-size: 28px;
     line-height: 2;
     color: var(--color-white);
@@ -455,13 +461,13 @@ input:-webkit-autofill:active {
 
 .price__card-descr {
     display: block;
-        font-size: 18px;
+    font-size: 18px;
     line-height: 2;
     color: var(--color-white);
 }
 
 .price__card-descr:nth-last-child(2) {
-    margin-bottom: 39px;
+    margin-bottom: 40px;
 }
 
 .price__btn {
@@ -487,7 +493,7 @@ input:-webkit-autofill:active {
 
 .contacts__title {
     margin-right: 223px;
-    margin-bottom: 40px;
+    margin-bottom: 41px;
     padding-top: 59px;
     font-size: 40px;
     line-height: 2;
@@ -503,7 +509,7 @@ input:-webkit-autofill:active {
     width: 450px;
     height: 50px;
     margin-bottom: 20px;
-    padding-left: 20px;
+    padding-left: 19px;
     border: 2px solid var(--color-gold);
     font-size: var(--font-size-regular);
     line-height: 2;
@@ -515,7 +521,7 @@ input:-webkit-autofill:active {
     width: 450px;
     height: 100px;
     margin-bottom: 30px;
-    padding-left: 20px;
+    padding-left: 18px;
     resize: none;
     border: 2px solid var(--color-gold);
     font-size: var(--font-size-regular);
@@ -538,13 +544,13 @@ input:-webkit-autofill:active {
     color: var(--color-white);
 }
 
-.footer__left {
-    margin-right: 20px;
-}
-
 .footer__left-copyright,
 .footer__left-year {
     margin-right: 15px;
+}
+
+.footer__centre {
+    width: 16.4%;
 }
 
 .footer__right-list {
