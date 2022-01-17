@@ -45,6 +45,10 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+
+}
+
 html {
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
@@ -140,6 +144,14 @@ input:-webkit-autofill:active {
     flex-wrap: wrap;
     background: url(../assets/img/bg_hero.jpg) no-repeat;
     background-position: center 0;
+}
+
+#menu {
+    display: none;
+}
+
+.header__burger {
+    display: none;
 }
 
 .header__logo {
