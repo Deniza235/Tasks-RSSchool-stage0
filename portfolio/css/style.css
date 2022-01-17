@@ -46,8 +46,14 @@
 }
 
 @media (max-width: 768px) {
-
-}
+    
+    .header__burger-line {
+        width: 50px;
+        height: 3px;
+        margin: 9px auto;
+        background-color: var(--color-white);
+    }
+} 
 
 html {
     font-family: 'Inter', sans-serif;
