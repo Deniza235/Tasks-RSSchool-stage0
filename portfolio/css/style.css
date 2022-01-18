@@ -578,11 +578,20 @@ input:-webkit-autofill:active {
     .container {
         width: 768px;
         margin: 0 auto;
+        padding: 0 60px;
     }
+
+    .title {
+        font-size: 32px;
+        font-weight: normal;
+    }
+
+    /*Header*/
 
     .header__container {
         height: 90px;
-        padding: 20px 60px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         background-position: -5px -31px;
         background-size: auto 620px;
     }
@@ -594,7 +603,6 @@ input:-webkit-autofill:active {
     .header_switch {
         margin-left: auto;
     }
-
 
     .header__burger {
         width: 60px;
@@ -626,9 +634,19 @@ input:-webkit-autofill:active {
     /*Hero*/
 
     .hero__container {
+        padding-top: 78px;
         height: 500px;
         background-position: -5px -121px;
         background-size: auto 620px;
     }
 
+    .hero__title {
+        margin-bottom: 20px;
+    }
+    
+    .hero__descr {
+        margin-bottom: 59px;
+        width: 60%;
+        line-height: 24px;
+    }
 }
