@@ -583,7 +583,6 @@ input:-webkit-autofill:active {
 
     .title {
         font-size: 32px;
-        font-weight: normal;
     }
 
     /*Header*/
@@ -642,11 +641,63 @@ input:-webkit-autofill:active {
 
     .hero__title {
         margin-bottom: 20px;
+        font-weight: normal;
     }
     
     .hero__descr {
         margin-bottom: 59px;
         width: 60%;
         line-height: 24px;
+    }
+
+    /*Skills*/
+
+    .skills__container {
+        padding: 0 20px;
+        height: 729px;
+    }
+
+    .skills__title {
+        margin-bottom: 66px;
+        line-height: 40.22px;
+    }
+
+    .skills__title::before {
+        width: 115px;
+        top: 119px;
+        left: 182px;
+    }
+
+    .skills__title::after {
+        width: 113px;
+        top: 119px;
+        right: 183px;
+    }
+
+    .skills__card {
+        justify-content: space-evenly;
+    }
+    
+    .skills__list {
+        width: 300px;
+        height: 224px;
+        padding: 0 10px;
+    }
+    
+    .skills__list:nth-child(-n+2) {
+        margin-bottom: 36px;
+    }
+    .skills__logo {
+        margin-bottom: 29px;
+        margin-right: 5px;
+    }
+
+    .skills__item-title {
+        margin-right: 5px;
+    }
+
+    .skills__item-descr {
+        margin-left: -5px;
+        line-height: 22px;
     }
 }
