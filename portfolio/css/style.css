@@ -342,13 +342,14 @@ input:-webkit-autofill:active {
 }
 
 .portfolio__list-btn {
+    margin-bottom: 60px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
 }
 
 .portfolio__btn {
-    margin-bottom: 60px;
     border: 2px solid var(--color-gold);
     color: var(--color-gold);
 }
@@ -365,6 +366,7 @@ input:-webkit-autofill:active {
 .portfolio__gallery-pictures {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 25px;
 }
 
@@ -699,5 +701,28 @@ input:-webkit-autofill:active {
     .skills__item-descr {
         margin-left: -5px;
         line-height: 22px;
+    }
+
+    /*Portfolio*/
+
+    .portfolio__title {
+        padding-top: 88px;
+        margin-bottom: 58px;
+    }
+
+    .portfolio__title::before {
+        width: 88px;
+        top: 119px;
+        left: 142px;
+    }
+
+    .portfolio__title::after {
+        width: 86px;
+        top: 119px;
+        right: 143px
+    }
+
+    .portfolio__gallery-pictures {
+        
     }
 }
