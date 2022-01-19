@@ -722,7 +722,33 @@ input:-webkit-autofill:active {
         right: 143px
     }
 
-    .portfolio__gallery-pictures {
-        
+    /*Video*/
+
+    .video__title {
+        padding-top: 88px;
+        margin-bottom: 58px;
+    }
+
+    .video__title::before {
+        width: 115px;
+        top: 119px;
+        left: 142px;
+    }
+
+    .video__title::after {
+        width: 113px;
+        top: 119px;
+        right: 143px;
+    }
+
+    .video__player-image {
+        min-width: 128%;
+        object-position: 24px 0;
+    }
+
+    .video__player-icon {
+        padding-top: 6px;
+        width: 65px;
+        height: 72px;
     }
 }
