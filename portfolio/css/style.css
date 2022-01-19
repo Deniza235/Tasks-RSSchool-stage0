@@ -787,4 +787,27 @@ input:-webkit-autofill:active {
     .price__card-price {
         font-size: 24px;
     }
+
+    
+    /*Contacts*/
+
+    .contacts {
+        padding-top: 80px;
+    }
+
+    .contacts__container {
+        height: 600px;
+        align-items: center;
+        background-position: -236px -1px;
+        background-size: auto 604px;
+    }
+    
+    .contacts__title {
+        padding-top: 60px;
+        margin-right: 0;
+    }
+
+    .contacts__form {
+        align-items: center;
+    }
 }
