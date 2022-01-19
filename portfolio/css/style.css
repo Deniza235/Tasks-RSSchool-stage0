@@ -434,7 +434,8 @@ input:-webkit-autofill:active {
 
 .price__card-list {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .price__card {
@@ -750,5 +751,40 @@ input:-webkit-autofill:active {
         padding-top: 6px;
         width: 65px;
         height: 72px;
+    }
+
+    /*Price*/
+
+    .price__title {
+        padding-top: 88px;
+        margin-bottom: 58px;
+    }
+
+    .price__title::before {
+        width: 119px;
+        top: 119px;
+        left: 142px;
+    }
+
+    .price__title::after {
+        width: 118px;
+        top: 119px;
+        right: 143px;
+    }
+    
+    .price__card-list {
+        gap: 50px;
+    }
+
+    .price__card {
+        width: 420px;
+    }
+
+    .price__card-title {
+    font-size: 28px;
+    }
+
+    .price__card-price {
+        font-size: 24px;
     }
 }
