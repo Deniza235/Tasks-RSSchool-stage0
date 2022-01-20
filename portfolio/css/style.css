@@ -201,6 +201,14 @@ input:-webkit-autofill:active {
     color: var(--color-gold);
 }
 
+.header__burger {
+    display: none;
+}
+
+/* .header__menu {
+    display: none;
+} */
+
 /*Hero*/
 
 .hero__container {
@@ -607,13 +615,6 @@ input:-webkit-autofill:active {
         margin-left: auto;
     }
 
-    .header__burger {
-        width: 60px;
-        height: 50px;
-        background-color: transparent;
-        cursor: pointer;
-    }
-
     .header__switch-en{
         margin-right: 5px;
     }
@@ -626,12 +627,68 @@ input:-webkit-autofill:active {
         margin-right: 15px;
     }
 
+    .header__burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 50px;
+        cursor: pointer;
+        user-select: none;
+        z-index: 2;
+    }
+
+    .header__burger.is-active .header__menu {
+        right: -626px;
+    }
+
+    .header__burger.is-active .line_1 {
+        width: 102%;
+        height: 2px;
+        transform: rotate(-45deg) translate(-8px, 10px);
+    }
+
+    .header__burger.is-active .line_2 {
+        opacity: 0;
+    }
+
+    .header__burger.is-active .line_3 {
+        width: 102%;
+        height: 2px;
+        transform: rotate(45deg) translate(-8px, -9px);
+    }
+
     .header__burger-line {
-        width: 50px;
+        width: 83%;
         height: 3px;
-        display: block;
-        margin: 10px auto;
-        background-color: var(--color-white);
+        background: var(--color-white);
+        margin: 5px 0;
+        z-index: 15;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .header__menu {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        bottom: 0;
+        right: 150px;
+        width: 620px;
+        height: 1024px;
+        padding-top: 134px;
+        padding-left: 127px;
+        color: var(--color-white);
+        background-color: var(--color-black);
+        transition: transform .3s ease-in-out;
+        transform: translateX(-101%);
+    } 
+
+    .header__menu-item {
+        margin-bottom: 16px;
+        font-family: 'Inter', sans-serif;
+        font-size: 35px;
+        line-height: 73px;
     }
 
     /*Hero*/
