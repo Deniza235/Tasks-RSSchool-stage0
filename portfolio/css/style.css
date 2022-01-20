@@ -201,6 +201,14 @@ input:-webkit-autofill:active {
     color: var(--color-gold);
 }
 
+.header__burger {
+    display: none;
+}
+
+/* .header__menu {
+    display: none;
+} */
+
 /*Hero*/
 
 .hero__container {
@@ -342,13 +350,14 @@ input:-webkit-autofill:active {
 }
 
 .portfolio__list-btn {
+    margin-bottom: 60px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
 }
 
 .portfolio__btn {
-    margin-bottom: 60px;
     border: 2px solid var(--color-gold);
     color: var(--color-gold);
 }
@@ -365,6 +374,7 @@ input:-webkit-autofill:active {
 .portfolio__gallery-pictures {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 25px;
 }
 
@@ -432,7 +442,9 @@ input:-webkit-autofill:active {
 
 .price__card-list {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
 }
 
 .price__card {
@@ -572,4 +584,309 @@ input:-webkit-autofill:active {
 
 .footer__right-link-logo:hover {
     fill: var(--color-gold);
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 768px;
+        margin: 0 auto;
+        padding: 0 60px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    /*Header*/
+
+    .header__container {
+        height: 90px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-position: -5px -31px;
+        background-size: auto 620px;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .header_switch {
+        margin-left: auto;
+    }
+
+    .header__switch-en{
+        margin-right: 5px;
+    }
+
+    .header__switch-slash{
+        margin-right: 14px;
+    }
+    
+    .header__switch-ru {
+        margin-right: 15px;
+    }
+
+    .header__burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 50px;
+        cursor: pointer;
+        user-select: none;
+        z-index: 2;
+    }
+
+    .header__burger.is-active .header__menu {
+        right: -626px;
+    }
+
+    .header__burger.is-active .line_1 {
+        width: 102%;
+        height: 2px;
+        transform: rotate(-45deg) translate(-8px, 10px);
+    }
+
+    .header__burger.is-active .line_2 {
+        opacity: 0;
+    }
+
+    .header__burger.is-active .line_3 {
+        width: 102%;
+        height: 2px;
+        transform: rotate(45deg) translate(-8px, -9px);
+    }
+
+    .header__burger-line {
+        width: 83%;
+        height: 3px;
+        background: var(--color-white);
+        margin: 5px 0;
+        z-index: 15;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .header__menu {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        bottom: 0;
+        right: 150px;
+        width: 620px;
+        height: 1024px;
+        padding-top: 134px;
+        padding-left: 127px;
+        color: var(--color-white);
+        background-color: var(--color-black);
+        transition: transform .3s ease-in-out;
+        transform: translateX(-101%);
+    } 
+
+    .header__menu-item {
+        margin-bottom: 16px;
+        font-family: 'Inter', sans-serif;
+        font-size: 35px;
+        line-height: 73px;
+    }
+
+    /*Hero*/
+
+    .hero__container {
+        padding-top: 78px;
+        height: 500px;
+        background-position: -5px -121px;
+        background-size: auto 620px;
+    }
+
+    .hero__title {
+        margin-bottom: 20px;
+        font-weight: normal;
+    }
+    
+    .hero__descr {
+        margin-bottom: 59px;
+        width: 60%;
+        line-height: 24px;
+    }
+
+    /*Skills*/
+
+    .skills__container {
+        padding: 0 20px;
+        height: 729px;
+    }
+
+    .skills__title {
+        margin-bottom: 66px;
+        line-height: 40.22px;
+    }
+
+    .skills__title::before {
+        width: 115px;
+        top: 119px;
+        left: 182px;
+    }
+
+    .skills__title::after {
+        width: 113px;
+        top: 119px;
+        right: 183px;
+    }
+
+    .skills__card {
+        justify-content: space-evenly;
+    }
+    
+    .skills__list {
+        width: 300px;
+        height: 224px;
+        padding: 0 10px;
+    }
+    
+    .skills__list:nth-child(-n+2) {
+        margin-bottom: 36px;
+    }
+    .skills__logo {
+        margin-bottom: 29px;
+        margin-right: 5px;
+    }
+
+    .skills__item-title {
+        margin-right: 5px;
+    }
+
+    .skills__item-descr {
+        margin-left: -5px;
+        line-height: 22px;
+    }
+
+    /*Portfolio*/
+
+    .portfolio__title {
+        padding-top: 88px;
+        margin-bottom: 58px;
+    }
+
+    .portfolio__title::before {
+        width: 88px;
+        top: 119px;
+        left: 142px;
+    }
+
+    .portfolio__title::after {
+        width: 86px;
+        top: 119px;
+        right: 143px
+    }
+
+    /*Video*/
+
+    .video__title {
+        padding-top: 88px;
+        margin-bottom: 58px;
+    }
+
+    .video__title::before {
+        width: 115px;
+        top: 119px;
+        left: 142px;
+    }
+
+    .video__title::after {
+        width: 113px;
+        top: 119px;
+        right: 143px;
+    }
+
+    .video__player-image {
+        min-width: 128%;
+        object-position: 24px 0;
+    }
+
+    .video__player-icon {
+        padding-top: 6px;
+        width: 65px;
+        height: 72px;
+    }
+
+    /*Price*/
+
+    .price__title {
+        padding-top: 88px;
+        margin-bottom: 58px;
+    }
+
+    .price__title::before {
+        width: 119px;
+        top: 119px;
+        left: 142px;
+    }
+
+    .price__title::after {
+        width: 118px;
+        top: 119px;
+        right: 143px;
+    }
+    
+    .price__card-list {
+        gap: 50px;
+    }
+
+    .price__card {
+        width: 420px;
+    }
+
+    .price__card-title {
+    font-size: 28px;
+    }
+
+    .price__card-price {
+        font-size: 24px;
+    }
+
+    
+    /*Contacts*/
+
+    .contacts {
+        padding-top: 80px;
+    }
+
+    .contacts__container {
+        height: 600px;
+        align-items: center;
+        background-position: -236px -1px;
+        background-size: auto 604px;
+    }
+    
+    .contacts__title {
+        padding-top: 60px;
+        margin-right: 0;
+    }
+
+    .contacts__form {
+        align-items: center;
+    }
+
+    /*Footer*/
+    
+    .footer__comtainer {
+        flex-direction: column;
+    }
+
+    .footer__left {
+        height: 43px;
+        margin-left: 33px;
+        padding-top: 15px
+    }
+    
+    .footer__centre {
+        width: 32.4%;
+        height: 53px;
+    }
+    
+    .footer__right {
+        height: 29px;
+    }
 }
