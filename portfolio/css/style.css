@@ -436,6 +436,7 @@ input:-webkit-autofill:active {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 25px;
 }
 
 .price__card {
@@ -809,5 +810,26 @@ input:-webkit-autofill:active {
 
     .contacts__form {
         align-items: center;
+    }
+
+    /*Footer*/
+    
+    .footer__comtainer {
+        flex-direction: column;
+    }
+
+    .footer__left {
+        height: 43px;
+        margin-left: 33px;
+        padding-top: 15px
+    }
+    
+    .footer__centre {
+        width: 32.4%;
+        height: 53px;
+    }
+    
+    .footer__right {
+        height: 29px;
     }
 }
