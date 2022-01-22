@@ -219,7 +219,7 @@ input:-webkit-autofill:active {
     visibility: hidden;
     background-color: var(--color-black);
     opacity: 0.5;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity .5s ease-in-out;
 }
 
 /*Hero*/
@@ -687,7 +687,7 @@ input:-webkit-autofill:active {
         background: var(--color-white);
         margin: 5px 0;
         z-index: 15;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.5s ease-in-out;
     }
 
     .header__menu {
@@ -702,7 +702,7 @@ input:-webkit-autofill:active {
         padding-left: 127px;
         color: var(--color-white);
         background-color: var(--color-black);
-        transition: transform .3s ease-in-out;
+        transition: all .5s ease-in-out;
     } 
 
     .header__menu-item {
