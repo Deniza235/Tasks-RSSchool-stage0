@@ -919,4 +919,144 @@ input:-webkit-autofill:active {
     .footer__right {
         height: 29px;
     }
+
+}
+
+@media (max-width: 620px) {
+    .container {
+    width: 100%;
+    }
+
+
+    /*Header*/
+
+    .header__container {
+    background-position: -83px 19px;
+    background-size: auto 510px;
+    }
+
+
+    /*Hero*/
+
+    .hero__container {
+        height: 420px;
+        padding-top: 36px;
+        background-position: -83px -71px;
+        background-size: auto 510px;
+    }
+
+    .hero__descr {
+        width: 50%;
+        line-height: 1;
+    }
+
+    /* Skills*/
+
+    .skills__container {
+        height: 1150px;
+    }
+
+    .skills__title {
+        padding-top: 60px;
+        margin-bottom: 50px;
+    }
+
+    .skills__title::before {
+        width: 90px;
+        top: 77px;
+        left: 100px;
+    }
+
+    .skills__title::after {
+        width: 90px;
+        top: 77px;
+        right: 100px;
+    }
+
+    .skills__list {
+        margin-bottom: 30px;
+    }
+
+    /*Portfolio*/
+
+    .portfolio__title {
+        padding-top: 60px;
+        margin-bottom: 40px;
+    }
+
+    .portfolio__title::before {
+        width: 75px;
+        top: 90px;
+        left: 50px;
+    }
+
+    .portfolio__title::after {
+        width: 75px;
+        top: 90px;
+        right: 50px;
+    }
+
+    /*Video*/
+
+    .video__container {
+        height: 500px;
+    }
+
+    .video__title {
+        padding-top: 60px;
+        margin-bottom: 40px;    
+    }
+
+    .video__title::before {
+        width: 75px;
+        top: 90px;
+        left: 130px;
+    }
+
+    .video__title::after {
+        width: 75px;
+        top: 90px;
+        right: 130px;
+    }
+
+    .video__player {
+        height: 300px;
+        background-position: center;
+        background-size: auto 300px;
+    }
+
+    /*Price*/
+
+    .price__title {
+        padding-top: 60px;
+        margin-bottom: 40px;
+    }
+
+    .price__title::before {
+        width: 75px;
+        top: 90px;
+        left: 80px;
+    }
+
+    .price__title::after {
+        width: 75px;
+        top: 90px;
+        right: 80px;
+    }
+
+    /*Footer*/
+
+    .footer__comtainer {
+        height: 170px;
+        padding-bottom: 20px;
+    }
+
+    .footer__left {
+        margin-left: 0;
+    }
+
+    .footer__centre {
+        width: 50%;
+        text-align: center;
+    }
 }
