@@ -412,10 +412,13 @@ input:-webkit-autofill:active {
 }
 
 .video__player {
+    height: 705px;
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    background: url(../assets/img/bg_video-player.jpg) no-repeat;
+    background-position: 0 center;
 }
 
 .video__play-btn {
@@ -826,10 +829,10 @@ input:-webkit-autofill:active {
         right: 203px;
     }
 
-    .video__player-image {
+    .video__player {
         height: 418px;
-        object-fit: cover;
-        object-position: -7px 0;
+        background-position: -5px 2px;
+        background-size: auto 415px;
     }
 
     .video__player-icon {
