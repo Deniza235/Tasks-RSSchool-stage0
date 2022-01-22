@@ -51,6 +51,11 @@ html {
     background-color: var(--color-black);
 }
 
+body {
+    overflow-x: hidden;
+    z-index: 1;
+}
+
 a {
     text-decoration: none;
     color: var(--color-white);
@@ -181,7 +186,7 @@ input:-webkit-autofill:active {
     margin-right: 31px;
 }
 
-.header_switch {
+.header__switch {
     font-size: var(--font-size-regular);
     line-height: 50px;
     font-weight: 700;
@@ -205,9 +210,17 @@ input:-webkit-autofill:active {
     display: none;
 }
 
-/* .header__menu {
-    display: none;
-} */
+.header__bg-overlay {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    visibility: hidden;
+    background-color: var(--color-black);
+    opacity: 0.5;
+    transition: opacity .5s ease-in-out;
+}
 
 /*Hero*/
 
@@ -399,10 +412,13 @@ input:-webkit-autofill:active {
 }
 
 .video__player {
+    height: 705px;
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    background: url(../assets/img/bg_video-player.jpg) no-repeat;
+    background-position: 0 center;
 }
 
 .video__play-btn {
@@ -587,6 +603,7 @@ input:-webkit-autofill:active {
 }
 
 @media (max-width: 768px) {
+
     .container {
         width: 768px;
         margin: 0 auto;
@@ -611,7 +628,7 @@ input:-webkit-autofill:active {
         display: none;
     }
 
-    .header_switch {
+    .header__switch {
         margin-left: auto;
     }
 
@@ -627,6 +644,12 @@ input:-webkit-autofill:active {
         margin-right: 15px;
     }
 
+    .header__bg-overlay.shadow {
+        width: 100%;
+        height: 100%;
+        visibility: visible;
+    }
+
     .header__burger {
         display: flex;
         flex-direction: column;
@@ -636,27 +659,29 @@ input:-webkit-autofill:active {
         height: 50px;
         cursor: pointer;
         user-select: none;
-        z-index: 2;
+        z-index: 20;
     }
 
     .header__burger.is-active .header__menu {
-        right: -626px;
+        right: 0;
     }
 
-    .header__burger.is-active .line_1 {
-        width: 102%;
+    .header__burger.is-active .line-1 {
+        position: fixed;
+        width: 8%;
         height: 2px;
-        transform: rotate(-45deg) translate(-8px, 10px);
+        transform: rotate(-45deg) translate(0px, 1px);
     }
 
-    .header__burger.is-active .line_2 {
+    .header__burger.is-active .line-2 {
         opacity: 0;
     }
 
-    .header__burger.is-active .line_3 {
-        width: 102%;
+    .header__burger.is-active .line-3 {
+        position: fixed;
+        width: 8%;
         height: 2px;
-        transform: rotate(45deg) translate(-8px, -9px);
+        transform: rotate(45deg) translate(2px, 0px);
     }
 
     .header__burger-line {
@@ -665,23 +690,22 @@ input:-webkit-autofill:active {
         background: var(--color-white);
         margin: 5px 0;
         z-index: 15;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.5s ease-in-out;
     }
 
     .header__menu {
-        position: absolute;
+        position: fixed;
         z-index: 10;
         top: 0;
         bottom: 0;
-        right: 150px;
+        right: -626px;
         width: 620px;
         height: 1024px;
         padding-top: 134px;
         padding-left: 127px;
         color: var(--color-white);
         background-color: var(--color-black);
-        transition: transform .3s ease-in-out;
-        transform: translateX(-101%);
+        transition: all .5s ease-in-out;
     } 
 
     .header__menu-item {
@@ -783,6 +807,11 @@ input:-webkit-autofill:active {
 
     /*Video*/
 
+    .video__container {
+        padding: 0;
+        height: 628px;
+    }
+
     .video__title {
         padding-top: 88px;
         margin-bottom: 58px;
@@ -791,18 +820,19 @@ input:-webkit-autofill:active {
     .video__title::before {
         width: 115px;
         top: 119px;
-        left: 142px;
+        left: 202px;
     }
 
     .video__title::after {
         width: 113px;
         top: 119px;
-        right: 143px;
+        right: 203px;
     }
 
-    .video__player-image {
-        min-width: 128%;
-        object-position: 24px 0;
+    .video__player {
+        height: 418px;
+        background-position: -5px 2px;
+        background-size: auto 415px;
     }
 
     .video__player-icon {
@@ -888,5 +918,379 @@ input:-webkit-autofill:active {
     
     .footer__right {
         height: 29px;
+    }
+
+}
+
+@media (max-width: 620px) {
+    .container {
+    width: 100%;
+    }
+
+    /*Header*/
+
+    .header__container {
+    background-position: -83px 19px;
+    background-size: auto 510px;
+    }
+
+    .header__menu {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /*Hero*/
+
+    .hero__container {
+        height: 420px;
+        padding-top: 36px;
+        background-position: -83px -71px;
+        background-size: auto 510px;
+    }
+
+    .hero__descr {
+        width: 50%;
+        line-height: 1;
+    }
+
+    /* Skills*/
+
+    .skills__container {
+        height: 1150px;
+    }
+
+    .skills__title {
+        padding-top: 60px;
+        margin-bottom: 50px;
+    }
+
+    .skills__title::before {
+        width: 90px;
+        top: 77px;
+        left: 100px;
+    }
+
+    .skills__title::after {
+        width: 90px;
+        top: 77px;
+        right: 100px;
+    }
+
+    .skills__list {
+        margin-bottom: 30px;
+    }
+
+    /*Portfolio*/
+
+    .portfolio__title {
+        padding-top: 60px;
+        margin-bottom: 40px;
+    }
+
+    .portfolio__title::before {
+        width: 75px;
+        top: 90px;
+        left: 50px;
+    }
+
+    .portfolio__title::after {
+        width: 75px;
+        top: 90px;
+        right: 50px;
+    }
+
+    /*Video*/
+
+    .video__container {
+        height: 500px;
+    }
+
+    .video__title {
+        padding-top: 60px;
+        margin-bottom: 40px;    
+    }
+
+    .video__title::before {
+        width: 75px;
+        top: 90px;
+        left: 130px;
+    }
+
+    .video__title::after {
+        width: 75px;
+        top: 90px;
+        right: 130px;
+    }
+
+    .video__player {
+        height: 300px;
+        background-position: center;
+        background-size: auto 300px;
+    }
+
+    /*Price*/
+
+    .price__title {
+        padding-top: 60px;
+        margin-bottom: 40px;
+    }
+
+    .price__title::before {
+        width: 75px;
+        top: 90px;
+        left: 80px;
+    }
+
+    .price__title::after {
+        width: 75px;
+        top: 90px;
+        right: 80px;
+    }
+
+    /*Footer*/
+
+    .footer__comtainer {
+        height: 170px;
+        padding: 0 20px 20px;
+    }
+
+    .footer__left {
+        margin-left: 0;
+    }
+
+    .footer__centre {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 540px) {
+    
+    /*Hero*/
+
+    .hero__descr {
+        margin-bottom: 30px;
+    }
+
+    /*Skills*/
+
+    .skills__title::before {
+        width: 75px;
+        top: 77px;
+        left: 70px;
+    }
+
+    .skills__title::after {
+        width: 75px;
+        top: 77px;
+        right: 70px;
+    }
+
+
+    /*Portfolio*/
+
+    .portfolio__title::before {
+        width: 55px;
+        top: 90px;
+        left: 30px;
+    }
+
+    .portfolio__title::after {
+        width: 55px;
+        top: 90px;
+        right: 30px;
+    }
+
+
+    /*Video*/
+
+    .video__title::before {
+        width: 65px;
+        top: 90px;
+        left: 95px;
+    }
+
+    .video__title::after {
+        width: 65px;
+        top: 90px;
+        right: 95px;
+    }
+
+    /*Price*/
+
+    .price__title::before {
+        width: 55px;
+        top: 90px;
+        left: 60px;
+    }
+
+    .price__title::after {
+        width: 55px;
+        top: 90px;
+        right: 60px;
+    }
+
+    /*Contacts*/
+
+    .contacts__form-input,
+    .contacts__form-textarea {
+        width: 375px;
+    }
+}
+
+@media (max-width: 446px) {
+
+    .container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    /*Header*/
+
+    .header__container {
+        height: 75px;
+        background-position: -83px 0px;
+        background-size: auto 425px;
+    }
+
+    /*Hero*/
+
+    .hero__container {
+        height: 350px;
+        padding-top: 0;
+        background-position: -83px -75px;
+        background-size: auto 425px;
+    }
+
+    .hero__descr {
+        margin-bottom: 15px;
+    }
+
+    /*Skills*/
+
+    .skills__title::before {
+        width: 55px;
+        top: 77px;
+        left: 55px;
+    }
+
+    .skills__title::after {
+        width: 55px;
+        top: 77px;
+        right: 55px;
+    }
+
+    /*Portfolio*/
+
+    .portfolio__title::before {
+        width: 45px;
+        top: 90px;
+        left: 30px;
+    }
+
+    .portfolio__title::after {
+        width: 45px;
+        top: 90px;
+        right: 30px;
+    }
+
+    /*Video*/
+
+    .video__container {
+        padding: 0;
+    }
+
+    .video__title::before {
+        width: 45px;
+        top: 90px;
+        left: 65px;
+    }
+
+    .video__title::after {
+        width: 45px;
+        top: 90px;
+        right: 65px;
+    }
+}
+
+@media (max-width: 376px) {
+
+    /*Header*/
+
+    .header__container {
+        background-position: -137px 0px;
+    }
+
+    /*Hero*/
+
+    .hero__container {
+        background-position: -137px -75px;
+    }
+    
+    .hero__title {
+        padding-top: 10px;
+        margin-bottom: 15px;
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .hero__descr {
+        font-size: 18px;
+    }
+
+    /*Skills*/
+
+    .skills__title::before {
+        width: 40px;
+        top: 77px;
+        left: 45px;
+    }
+
+    .skills__title::after {
+        width: 40px;
+        top: 77px;
+        right: 45px;
+    }
+
+    /*Portfolio*/
+
+    .portfolio__title::before {
+        width: 30px;
+        top: 90px;
+        left: 30px;
+    }
+
+    .portfolio__title::after {
+        width: 30px;
+        top: 90px;
+        right: 30px;
+    }
+
+    /*Price*/
+
+    .price__title::before {
+        width: 45px;
+        top: 90px;
+        left: 45px;
+    }
+
+    .price__title::after {
+        width: 45px;
+        top: 90px;
+        right: 45px;
+    }
+
+    /*Video*/
+
+    .video__player {
+        background-position: -64px center;
+    }
+
+    /*Contacts*/
+
+    .contacts__form-input,
+    .contacts__form-textarea {
+        width: 275px;
     }
 }
