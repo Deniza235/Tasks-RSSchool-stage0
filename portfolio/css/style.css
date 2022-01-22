@@ -927,7 +927,6 @@ input:-webkit-autofill:active {
     width: 100%;
     }
 
-
     /*Header*/
 
     .header__container {
@@ -1048,7 +1047,7 @@ input:-webkit-autofill:active {
 
     .footer__comtainer {
         height: 170px;
-        padding-bottom: 20px;
+        padding: 0 20px 20px;
     }
 
     .footer__left {
@@ -1056,7 +1055,237 @@ input:-webkit-autofill:active {
     }
 
     .footer__centre {
-        width: 50%;
+        width: 100%;
         text-align: center;
+    }
+}
+
+@media (max-width: 540px) {
+    
+    /*Hero*/
+
+    .hero__descr {
+        margin-bottom: 30px;
+    }
+
+    /*Skills*/
+
+    .skills__title::before {
+        width: 75px;
+        top: 77px;
+        left: 70px;
+    }
+
+    .skills__title::after {
+        width: 75px;
+        top: 77px;
+        right: 70px;
+    }
+
+
+    /*Portfolio*/
+
+    .portfolio__title::before {
+        width: 55px;
+        top: 90px;
+        left: 30px;
+    }
+
+    .portfolio__title::after {
+        width: 55px;
+        top: 90px;
+        right: 30px;
+    }
+
+
+    /*Video*/
+
+    .video__title::before {
+        width: 65px;
+        top: 90px;
+        left: 95px;
+    }
+
+    .video__title::after {
+        width: 65px;
+        top: 90px;
+        right: 95px;
+    }
+
+    /*Price*/
+
+    .price__title::before {
+        width: 55px;
+        top: 90px;
+        left: 60px;
+    }
+
+    .price__title::after {
+        width: 55px;
+        top: 90px;
+        right: 60px;
+    }
+
+    /*Contacts*/
+
+    .contacts__form-input,
+    .contacts__form-textarea {
+        width: 375px;
+    }
+}
+
+@media (max-width: 446px) {
+
+    .container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    /*Header*/
+
+    .header__container {
+        height: 75px;
+        background-position: -83px 0px;
+        background-size: auto 425px;
+    }
+
+    /*Hero*/
+
+    .hero__container {
+        height: 350px;
+        padding-top: 0;
+        background-position: -83px -75px;
+        background-size: auto 425px;
+    }
+
+    .hero__descr {
+        margin-bottom: 15px;
+    }
+
+    /*Skills*/
+
+    .skills__title::before {
+        width: 55px;
+        top: 77px;
+        left: 55px;
+    }
+
+    .skills__title::after {
+        width: 55px;
+        top: 77px;
+        right: 55px;
+    }
+
+    /*Portfolio*/
+
+    .portfolio__title::before {
+        width: 45px;
+        top: 90px;
+        left: 30px;
+    }
+
+    .portfolio__title::after {
+        width: 45px;
+        top: 90px;
+        right: 30px;
+    }
+
+    /*Video*/
+
+    .video__container {
+        padding: 0;
+    }
+
+    .video__title::before {
+        width: 45px;
+        top: 90px;
+        left: 65px;
+    }
+
+    .video__title::after {
+        width: 45px;
+        top: 90px;
+        right: 65px;
+    }
+}
+
+@media (max-width: 376px) {
+
+    /*Header*/
+
+    .header__container {
+        background-position: -137px 0px;
+    }
+
+    /*Hero*/
+
+    .hero__container {
+        background-position: -137px -75px;
+    }
+    
+    .hero__title {
+        padding-top: 10px;
+        margin-bottom: 15px;
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .hero__descr {
+        font-size: 18px;
+    }
+
+    /*Skills*/
+
+    .skills__title::before {
+        width: 40px;
+        top: 77px;
+        left: 45px;
+    }
+
+    .skills__title::after {
+        width: 40px;
+        top: 77px;
+        right: 45px;
+    }
+
+    /*Portfolio*/
+
+    .portfolio__title::before {
+        width: 30px;
+        top: 90px;
+        left: 30px;
+    }
+
+    .portfolio__title::after {
+        width: 30px;
+        top: 90px;
+        right: 30px;
+    }
+
+    /*Price*/
+
+    .price__title::before {
+        width: 45px;
+        top: 90px;
+        left: 45px;
+    }
+
+    .price__title::after {
+        width: 45px;
+        top: 90px;
+        right: 45px;
+    }
+
+    /*Video*/
+
+    .video__player {
+        background-position: -64px center;
+    }
+
+    /*Contacts*/
+
+    .contacts__form-input,
+    .contacts__form-textarea {
+        width: 275px;
     }
 }
