@@ -102,7 +102,7 @@ input:-webkit-autofill:active {
     font-weight: bold;
 }
 
-.title__section {
+.title-section {
     position: relative;
     margin-bottom: 60px;
     padding-top: 100px;
@@ -123,14 +123,14 @@ input:-webkit-autofill:active {
     color: var(--color-white);
 }
 
-.btn__set {
+.btn-set {
     width: 220px;
     height: 55px;
     font-size: var(--font-size-regular);
     line-height: 2;
 }
 
-.btn__color-gold {
+.btn-color-gold {
     background-color: var(--color-gold);
     color: var(--color-black);
 }
@@ -670,6 +670,7 @@ input:-webkit-autofill:active {
         position: fixed;
         width: 8%;
         height: 2px;
+        background: var(--color-gold);
         transform: rotate(-45deg) translate(0px, 1px);
     }
 
@@ -681,6 +682,7 @@ input:-webkit-autofill:active {
         position: fixed;
         width: 8%;
         height: 2px;
+        background: var(--color-gold);
         transform: rotate(45deg) translate(2px, 0px);
     }
 
@@ -691,6 +693,16 @@ input:-webkit-autofill:active {
         margin: 5px 0;
         z-index: 15;
         transition: all 0.5s ease-in-out;
+    }
+
+    .header__burger-line:hover,
+    .header__burger-line:focus,
+    .header__burger-line:active {
+        background: var(--color-gold);
+    }
+
+    .header__burger span:hover {
+        background: var(--color-gold);
     }
 
     .header__menu {
