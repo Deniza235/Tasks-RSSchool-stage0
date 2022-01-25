@@ -695,13 +695,7 @@ input:-webkit-autofill:active {
         transition: all 0.5s ease-in-out;
     }
 
-    .header__burger-line:hover,
-    .header__burger-line:focus,
-    .header__burger-line:active {
-        background: var(--color-gold);
-    }
-
-    .header__burger span:hover {
+    .header__burger:hover span {
         background: var(--color-gold);
     }
 
