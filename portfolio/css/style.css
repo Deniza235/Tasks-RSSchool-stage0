@@ -375,6 +375,11 @@ input:-webkit-autofill:active {
     color: var(--color-gold);
 }
 
+.portfolio__btn.active-btn {
+    color: var(--color-black);
+    background-color: var(--color-gold);
+}
+/* 
 .portfolio__btn:last-child {
     background-color: var(--color-gold);
     color: var(--color-black);
@@ -382,7 +387,7 @@ input:-webkit-autofill:active {
 
 .portfolio__btn:last-child:hover {
     color: var(--color-white);
-}
+} */
 
 .portfolio__gallery-pictures {
     display: flex;

@@ -10,7 +10,8 @@ window.addEventListener('DOMContentLoaded', function() {
   })
 
   const btnPortfolio = document.querySelector('.portfolio__btn');
-  const btnsPortfolio = document.querySelector('.portfolio__list-btn');
+  const btnsPortfolio = document.querySelectorAll('.portfolio__btn')
+  const btnListPortfolio = document.querySelector('.portfolio__list-btn');
   const imgPortfolio = document.querySelectorAll('.portfolio__picture');
 
   
@@ -21,7 +22,48 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  btnsPortfolio.addEventListener('click', changeImg);
+  btnListPortfolio.addEventListener('click', changeImg);
+
+
+  function activeState(items, activeName) {
+    for (let i = 0; i < items.length; i++) {
+      if(items[i].classList.contains(activeName)) {
+        items[i].classList.remove(activeName);
+      }
+    }
+  }
+
+  for(let i = 0; i < btnsPortfolio.length; i++) {
+    btnsPortfolio[i].addEventListener('click', function(el) {
+      activeState(btnsPortfolio, 'active-btn');
+      el.target.classList.add('active-btn')
+    })
+  }
+
+
+
+/*  btnPortfolio.classList.remove('active-btn');
+
+  function changeclassActive() {
+    
+  }
+
+  btnPortfolio.addEventListener('click', changeclassActive);
+ */
+  // надо доработать кеширование
+
+  /* function preloadImages() {
+    const seasons = ['winter', 'spring', 'summer', 'autumn'];
+    seasons.forEach(elem) => {
+      for(let i = 1; i <= 6; i++) {
+        const img = new Image();
+        img.src = `../assets/img/${elem}/${i}.jpg`;
+      }
+    }
+    
+  } */
+
+
 })
 
 
