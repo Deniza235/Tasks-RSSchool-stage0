@@ -96,6 +96,10 @@ input:-webkit-autofill:active {
     padding: 0 20px;
 }
 
+.switch.active-lang {
+    color: var(--color-gold);
+}
+
 .title {
     margin-top: 0;
     font-family: 'Merriweather', serif;
