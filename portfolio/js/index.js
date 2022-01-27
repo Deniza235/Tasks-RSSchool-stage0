@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded', function() {
   for(let i = 0; i < btnsPortfolio.length; i++) {
     btnsPortfolio[i].addEventListener('click', function(el) {
       activeState(btnsPortfolio, 'active-btn');
-      el.target.classList.add('active-btn')
+      el.target.classList.add('active-btn');
     })
   }
 
@@ -78,7 +78,7 @@ window.addEventListener('DOMContentLoaded', function() {
   for(let i = 0; i < switcher.length; i++) {
     switcher[i].addEventListener('click', function(el) {
       activeState(switcher, 'active-lang');
-      el.target.classList.add('active-btn')
+      el.target.classList.add('active-lang');
     })
   }
 })
