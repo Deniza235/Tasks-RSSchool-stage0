@@ -193,16 +193,11 @@ input:-webkit-autofill:active {
     color: var(--color-white);
 }
 
-.header__switch-en {
-    margin-right: 5px;
-    color: var(--color-gold);
-}
-
 .header__switch-slash {
     margin-right: 2px;
 }
 
-.header__switch-ru:hover {
+.header__switch-lang:hover {
     color: var(--color-gold);
 }
 
