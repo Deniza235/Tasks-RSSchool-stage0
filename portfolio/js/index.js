@@ -40,16 +40,6 @@ window.addEventListener('DOMContentLoaded', function() {
     })
   }
 
-
-
-/*  btnPortfolio.classList.remove('active-btn');
-
-  function changeclassActive() {
-    
-  }
-
-  btnPortfolio.addEventListener('click', changeclassActive);
- */
   // надо доработать кеширование
 
   /* function preloadImages() {
