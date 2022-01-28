@@ -1,5 +1,6 @@
 import i18Obj from '../js/translate.js';
 window.addEventListener('DOMContentLoaded', function() {
+  // burger menu
   document.querySelector('#burger').addEventListener('click', function() {
     document.querySelector('#burger').classList.toggle('is-active');
     document.querySelector('.header__bg-overlay').classList.toggle('shadow');
@@ -10,7 +11,8 @@ window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#burger').classList.remove('is-active');
   })
 
-  const btnPortfolio = document.querySelector('.portfolio__btn');
+  // portfolio btn and change pictures
+
   const btnsPortfolio = document.querySelectorAll('.portfolio__btn')
   const btnListPortfolio = document.querySelector('.portfolio__list-btn');
   const imgPortfolio = document.querySelectorAll('.portfolio__picture');
@@ -22,6 +24,8 @@ window.addEventListener('DOMContentLoaded', function() {
       imgPortfolio.forEach((img, index) => img.src = `./assets/img/${season}/${index + 1}.jpg`);
     }
   }
+  
+  //image caching
 
   function preloadImages() {
     const seasons = ['winter', 'spring', 'summer', 'autumn'];
@@ -37,7 +41,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
   btnListPortfolio.addEventListener('click', changeImg);
 
-
+  // function for active btn
   function activeState(items, activeName) {
     for (let i = 0; i < items.length; i++) {
       if(items[i].classList.contains(activeName)) {
@@ -52,7 +56,8 @@ window.addEventListener('DOMContentLoaded', function() {
       el.target.classList.add('active-btn');
     })
   }
-
+  
+  // switch lang
   const rusLang = document.querySelector('.header__switch-ru');
   const engLang = document.querySelector('.header__switch-en');
   const translate = document.querySelectorAll('[data-i18]');
@@ -80,5 +85,31 @@ window.addEventListener('DOMContentLoaded', function() {
       activeState(switcher, 'active-lang');
       el.target.classList.add('active-lang');
     })
+  }
+
+  // change theme html
+
+  const iconChange = document.querySelector('.header__theme-change');
+  const title = document.querySelectorAll('.title');
+  const htmlBackground = document.querySelector('html');
+  const themeChange = [iconChange, ...title, htmlBackground];
+  let theme = 'dark';
+
+  iconChange.addEventListener('click', function() {
+    let sunMoon = iconChange.firstElementChild.href.baseVal;
+    let topic = (sunMoon === './assets/svg/sprite-light.svg#sun') ? 'light' : 'dark';
+    selectTheme(topic);
+  })
+
+  const selectTheme = (topic) => {
+    if(topic === 'light') {
+      themeChange.forEach((elem) => elem.classList.add('light-theme'));
+      iconChange.firstElementChild.href.baseVal = './assets/svg/sprite-light.svg#moon';
+      theme = 'light';
+    } else {
+      themeChange.forEach((elem) => elem.classList.remove('light-theme'));
+      iconChange.firstElementChild.href.baseVal = './assets/svg/sprite-light.svg#sun';
+      theme = 'dark';
+    }
   }
 })

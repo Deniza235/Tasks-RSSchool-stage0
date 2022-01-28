@@ -51,6 +51,10 @@ html {
     background-color: var(--color-black);
 }
 
+html.light-theme {
+    background-color: var(--color-white);
+}
+
 body {
     overflow-x: hidden;
     z-index: 1;
@@ -106,6 +110,10 @@ input:-webkit-autofill:active {
     font-weight: bold;
 }
 
+.title.light-theme {
+    color: var(--color-black);
+}
+
 .title-section {
     position: relative;
     margin-bottom: 60px;
@@ -138,15 +146,6 @@ input:-webkit-autofill:active {
     background-color: var(--color-gold);
     color: var(--color-black);
 }
-
-/* .light-theme {
-    background-color: #fff;
-    color: #000;
-}
-
-.light-theme:hover {
-    color: #000;
-} */
 
 /*Header*/
 
@@ -229,7 +228,8 @@ input:-webkit-autofill:active {
     border-style: none;
 }
 
-.header__theme-change:hover {
+.header__theme-change:hover,
+.header__theme-change:hover .light-theme {
     fill: var(--color-gold);
 }
 
@@ -324,10 +324,6 @@ input:-webkit-autofill:active {
 .skills__logo {
     fill: var(--color-gold);
     text-align: center;
-}
-
-.skills__logo:hover {
-    fill: var(--color-white);
 }
 
 .skills__logo:nth-child(1) {
