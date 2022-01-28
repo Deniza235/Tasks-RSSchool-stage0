@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', function() {
   function changeImg(event) {
     const season = event.target.dataset.season;
     if(event.target.classList.contains('portfolio__btn')) {
-      imgPortfolio.forEach((img, index) => img.src = `../assets/img/${season}/${index + 1}.jpg`);
+      imgPortfolio.forEach((img, index) => img.src = `./assets/img/${season}/${index + 1}.jpg`);
     }
   }
 
