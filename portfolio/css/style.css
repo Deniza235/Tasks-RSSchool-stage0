@@ -139,6 +139,15 @@ input:-webkit-autofill:active {
     color: var(--color-black);
 }
 
+/* .light-theme {
+    background-color: #fff;
+    color: #000;
+}
+
+.light-theme:hover {
+    color: #000;
+} */
+
 /*Header*/
 
 .header__container {
@@ -201,8 +210,27 @@ input:-webkit-autofill:active {
     margin-right: 2px;
 }
 
+.header__switch-ru {
+    margin-right: 35px;
+}
+
 .header__switch-lang:hover {
     color: var(--color-gold);
+}
+
+.header__theme-change {
+    width: 45px;
+    height: 45px;
+    fill: var(--color-white);
+}
+
+.header__theme-icon {
+    background: transparent;
+    border-style: none;
+}
+
+.header__theme-change:hover {
+    fill: var(--color-gold);
 }
 
 .header__burger {
