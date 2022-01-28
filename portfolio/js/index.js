@@ -90,9 +90,12 @@ window.addEventListener('DOMContentLoaded', function() {
   // change theme html
 
   const iconChange = document.querySelector('.header__theme-change');
+  const headerCont = document.querySelector('.header__container');
+  const heroCont = document.querySelector('.hero__container')
   const title = document.querySelectorAll('.title');
+  const btnWhite = document.querySelectorAll('.btn-color-white');
   const htmlBackground = document.querySelector('html');
-  const themeChange = [iconChange, ...title, htmlBackground];
+  const themeChange = [iconChange, ...title, ...btnWhite, htmlBackground, headerCont, heroCont];
   let theme = 'dark';
 
   iconChange.addEventListener('click', function() {
@@ -106,10 +109,15 @@ window.addEventListener('DOMContentLoaded', function() {
       themeChange.forEach((elem) => elem.classList.add('light-theme'));
       iconChange.firstElementChild.href.baseVal = './assets/svg/sprite-light.svg#moon';
       theme = 'light';
+      document.documentElement.style.setProperty('--text-color', '#000');
+      document.documentElement.style.setProperty('--active-switch', '#fff');
     } else {
       themeChange.forEach((elem) => elem.classList.remove('light-theme'));
       iconChange.firstElementChild.href.baseVal = './assets/svg/sprite-light.svg#sun';
       theme = 'dark';
+      document.documentElement.style.setProperty('--text-color', '#fff');
+      document.documentElement.style.setProperty('--active-switch', '#bdae82');
     }
   }
+  
 })

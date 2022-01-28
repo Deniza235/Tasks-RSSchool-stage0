@@ -39,6 +39,8 @@
     --color-white: #ffffff;
     --color-gold: #bdae82;
     --color-black: #000000;
+    --text-color: #ffffff;
+    --active-switch: #bdae82;
 }
 
 * {
@@ -60,9 +62,13 @@ body {
     z-index: 1;
 }
 
+body.light-theme {
+    color: var(--color-black);
+}
+
 a {
     text-decoration: none;
-    color: var(--color-white);
+    color: var(--text-color);
     transition: color 0.5s;
 }
 
@@ -101,8 +107,9 @@ input:-webkit-autofill:active {
 }
 
 .switch.active-lang {
-    color: var(--color-gold);
+    color: var(--active-switch);
 }
+
 
 .title {
     margin-top: 0;
@@ -147,6 +154,16 @@ input:-webkit-autofill:active {
     color: var(--color-black);
 }
 
+.btn-color-white.light-theme {
+    background-color: var(--color-white);
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-color-white.light-theme:hover {
+    background-color: var(--color-black);
+    color: var(--color-gold);
+}
+
 /*Header*/
 
 .header__container {
@@ -159,11 +176,19 @@ input:-webkit-autofill:active {
     background-position: center 0;
 }
 
+.header__container.light-theme {
+    background: url(../assets/img/bg_hero_light.jpg) no-repeat;
+}
+
 .header__logo {
     width: 50px;
     height: 50px;
-    fill: var(--color-white);
+    fill: var(--text-color);
     transition: fill 0.5s;
+}
+
+.header__logo.light-theme {
+    fill: var(--color-black);
 }
 
 .header__logo:hover {
@@ -177,7 +202,7 @@ input:-webkit-autofill:active {
 .header__nav-link {
     font-size: var(--font-size-regular);
     line-height: 50px;
-    color: var(--color-white);
+    color: var(--text-color);
 }
 
 .header__list {
@@ -202,7 +227,7 @@ input:-webkit-autofill:active {
     font-size: var(--font-size-regular);
     line-height: 50px;
     font-weight: 700;
-    color: var(--color-white);
+    color: var(--text-color);
 }
 
 .header__switch-slash {
@@ -220,7 +245,7 @@ input:-webkit-autofill:active {
 .header__theme-change {
     width: 45px;
     height: 45px;
-    fill: var(--color-white);
+    fill: var(--text-color);
 }
 
 .header__theme-icon {
@@ -260,7 +285,12 @@ input:-webkit-autofill:active {
     align-items: flex-start;
     background: url(../assets/img/bg_hero.jpg) no-repeat;
     background-position: center -90px;
-    color: var(--color-white);
+    color: var(--text-color);
+}
+
+.hero__container.light-theme {
+    background: url(../assets/img/bg_hero_light.jpg) no-repeat;
+    background-position: center -90px;
 }
 
 .hero__title {
@@ -318,6 +348,7 @@ input:-webkit-autofill:active {
     height: 240px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -353,7 +384,7 @@ input:-webkit-autofill:active {
     font-weight: bold;
     font-size: var(--font-size-regular);
     line-height: 2;
-    color: var(--color-white);
+    color: var(--text-color);
 }
 
 .skills__item-descr {
@@ -361,7 +392,7 @@ input:-webkit-autofill:active {
     text-align: center;
     font-size: 18px;
     line-height: 2;
-    color: var(--color-white);
+    color: var(--text-color);
 }
 
 /*Portfolio*/
@@ -401,15 +432,6 @@ input:-webkit-autofill:active {
     color: var(--color-black);
     background-color: var(--color-gold);
 }
-/* 
-.portfolio__btn:last-child {
-    background-color: var(--color-gold);
-    color: var(--color-black);
-}
-
-.portfolio__btn:last-child:hover {
-    color: var(--color-white);
-} */
 
 .portfolio__gallery-pictures {
     display: flex;
@@ -504,7 +526,7 @@ input:-webkit-autofill:active {
     padding-top: 40px;
     font-size: 28px;
     line-height: 2;
-    color: var(--color-white);
+    color: var(--text-color);
 }
 
 .price__card-price {
@@ -518,7 +540,7 @@ input:-webkit-autofill:active {
     display: block;
     font-size: 18px;
     line-height: 2;
-    color: var(--color-white);
+    color: var(--text-color);
 }
 
 .price__card-descr:nth-last-child(2) {
@@ -539,7 +561,6 @@ input:-webkit-autofill:active {
     height: 700px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-end;
     background: url(../assets/img/bg_contacts.jpg) no-repeat;
     background-size: auto 700px;
@@ -596,7 +617,7 @@ input:-webkit-autofill:active {
     align-items: center;
     font-size: var(--font-size-regular);
     line-height: 50px;
-    color: var(--color-white);
+    color: var(--text-color);
 }
 
 .footer__left-copyright,
@@ -621,7 +642,7 @@ input:-webkit-autofill:active {
 .footer__right-link-logo {
     width: 32px;
     height: 32px;
-    fill: var(--color-white);
+    fill: var(--text-color);
     transition: fill 0.5s;
 }
 
@@ -716,7 +737,7 @@ input:-webkit-autofill:active {
     .header__burger-line {
         width: 83%;
         height: 3px;
-        background: var(--color-white);
+        background: var(--text-color);
         margin: 5px 0;
         z-index: 15;
         transition: all 0.5s ease-in-out;
@@ -736,7 +757,7 @@ input:-webkit-autofill:active {
         height: 1024px;
         padding-top: 134px;
         padding-left: 127px;
-        color: var(--color-white);
+        color: var(--text-color);
         background-color: var(--color-black);
         transition: all .5s ease-in-out;
     } 
