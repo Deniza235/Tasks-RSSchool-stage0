@@ -41,6 +41,9 @@
     --color-black: #000000;
     --text-color: #ffffff;
     --active-switch: #bdae82;
+    --color-line: #bdae82;
+    --btn-color: #000000;
+
 }
 
 * {
@@ -96,7 +99,7 @@ input:-webkit-autofill:active {
     
 ::placeholder {
     font-family: inherit;
-    color: var(--color-gold);
+    color: var(--color-line);
     font-size: var(--font-size-regular);
     line-height: 2;
 }
@@ -160,6 +163,17 @@ input:-webkit-autofill:active {
 }
 
 .btn-color-white.light-theme:hover {
+    background-color: var(--color-black);
+    color: var(--color-gold);
+}
+
+.btn-light.light-theme {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-light.light-theme:hover {
     background-color: var(--color-black);
     color: var(--color-gold);
 }
@@ -318,8 +332,8 @@ input:-webkit-autofill:active {
     position: absolute;
     width: 272px;
     top: 139px;
-    left: 350px;
-    border: 1px solid var(--color-gold);
+    left: 300px;
+    border: 1px solid var(--color-line);
 }
 
 .skills__title::after {
@@ -327,8 +341,8 @@ input:-webkit-autofill:active {
     position: absolute;
     width: 272px;
     top: 139px;
-    right: 350px;
-    border: 1px solid var(--color-gold);
+    right: 300px;
+    border: 1px solid var(--color-line);
 }
 
 .skills__card {
@@ -402,8 +416,8 @@ input:-webkit-autofill:active {
     position: absolute;
     width: 236px;
     top: 139px;
-    left: 350px;
-    border: 1px solid var(--color-gold);
+    left: 300px;
+    border: 1px solid var(--color-line);
 }
 
 .portfolio__title::after {
@@ -411,8 +425,8 @@ input:-webkit-autofill:active {
     position: absolute;
     width: 239px;
     top: 139px;
-    right: 350px;
-    border: 1px solid var(--color-gold);
+    right: 300px;
+    border: 1px solid var(--color-line);
 }
 
 .portfolio__list-btn {
@@ -425,12 +439,13 @@ input:-webkit-autofill:active {
 
 .portfolio__btn {
     border: 2px solid var(--color-gold);
+    background-color: var(--btn-color);
     color: var(--color-gold);
 }
 
 .portfolio__btn.active-btn {
-    color: var(--color-black);
-    background-color: var(--color-gold);
+    color: var(--btn-color);
+    background-color: var(--color-line);
 }
 
 .portfolio__gallery-pictures {
@@ -448,7 +463,7 @@ input:-webkit-autofill:active {
     width: 270px;
     top: 139px;
     left: 350px;
-    border: 1px solid var(--color-gold);
+    border: 1px solid var(--color-line);
 }
 
 .video__title::after {
@@ -457,7 +472,7 @@ input:-webkit-autofill:active {
     width: 269px;
     top: 139px;
     right: 350px;
-    border: 1px solid var(--color-gold);
+    border: 1px solid var(--color-line);
 }
 
 .video__player {
@@ -472,7 +487,7 @@ input:-webkit-autofill:active {
 
 .video__play-btn {
     position: absolute;
-    fill: var(--color-white);
+    fill: var(--text-color);
     transition: fill 0.5s;
 }
 
@@ -493,7 +508,7 @@ input:-webkit-autofill:active {
     width: 277px;
     top: 139px;
     left: 350px;
-    border: 1px solid var(--color-gold);
+    border: 1px solid var(--color-line);
 }
 
 .price__title::after {
@@ -502,7 +517,7 @@ input:-webkit-autofill:active {
     width: 277px;
     top: 139px;
     right: 350px;
-    border: 1px solid var(--color-gold);
+    border: 1px solid var(--color-line);
 }
 
 .price__card-list {
@@ -567,6 +582,10 @@ input:-webkit-autofill:active {
     background-position: center center;
 }
 
+.contacts__container.light-theme {
+    background: url(../assets/img/bg_contacts_light.jpg) no-repeat;
+}
+
 .contacts__title {
     margin-right: 223px;
     margin-bottom: 41px;
@@ -589,7 +608,7 @@ input:-webkit-autofill:active {
     border: 2px solid var(--color-gold);
     font-size: var(--font-size-regular);
     line-height: 2;
-    color: var(--color-gold);
+    color: var(--color-line);
     background: rgba(0, 0, 0, 0.5);
 }
 
@@ -602,8 +621,13 @@ input:-webkit-autofill:active {
     border: 2px solid var(--color-gold);
     font-size: var(--font-size-regular);
     line-height: 2;
-    color: var(--color-gold);
+    color: var(--color-line);
     background: rgba(0, 0, 0, 0.5);
+}
+
+.contacts__form-input.light-theme,
+.contacts__form-textarea.light-theme {
+    background: rgba(255, 255, 255, 0.5);
 }
 
 /*Footer*/

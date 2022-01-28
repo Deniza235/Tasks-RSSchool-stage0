@@ -91,11 +91,15 @@ window.addEventListener('DOMContentLoaded', function() {
 
   const iconChange = document.querySelector('.header__theme-change');
   const headerCont = document.querySelector('.header__container');
-  const heroCont = document.querySelector('.hero__container')
+  const heroCont = document.querySelector('.hero__container');
+  const contactsCont = document.querySelector('.contacts__container');
+  const contactsInput = document.querySelectorAll('.contacts__form-input')
+  const contactsTextarea = document.querySelector('.contacts__form-textarea')
   const title = document.querySelectorAll('.title');
   const btnWhite = document.querySelectorAll('.btn-color-white');
+  const btnGold = document.querySelectorAll('.btn-light')
   const htmlBackground = document.querySelector('html');
-  const themeChange = [iconChange, ...title, ...btnWhite, htmlBackground, headerCont, heroCont];
+  const themeChange = [iconChange, ...title, ...btnWhite, ...btnGold, htmlBackground, headerCont, heroCont, contactsCont, ...contactsInput, contactsTextarea];
   let theme = 'dark';
 
   iconChange.addEventListener('click', function() {
@@ -111,12 +115,17 @@ window.addEventListener('DOMContentLoaded', function() {
       theme = 'light';
       document.documentElement.style.setProperty('--text-color', '#000');
       document.documentElement.style.setProperty('--active-switch', '#fff');
+      document.documentElement.style.setProperty('--color-line', '#000');
+      document.documentElement.style.setProperty('--btn-color', '#bdae82');
+
     } else {
       themeChange.forEach((elem) => elem.classList.remove('light-theme'));
       iconChange.firstElementChild.href.baseVal = './assets/svg/sprite-light.svg#sun';
       theme = 'dark';
       document.documentElement.style.setProperty('--text-color', '#fff');
       document.documentElement.style.setProperty('--active-switch', '#bdae82');
+      document.documentElement.style.setProperty('--color-line', '#bdae82');
+      document.documentElement.style.setProperty('--btn-color', '#000');
     }
   }
   
