@@ -1,5 +1,6 @@
 import i18Obj from '../js/translate.js';
 window.addEventListener('DOMContentLoaded', function() {
+  // burger menu
   document.querySelector('#burger').addEventListener('click', function() {
     document.querySelector('#burger').classList.toggle('is-active');
     document.querySelector('.header__bg-overlay').classList.toggle('shadow');
@@ -10,7 +11,8 @@ window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#burger').classList.remove('is-active');
   })
 
-  const btnPortfolio = document.querySelector('.portfolio__btn');
+  // portfolio btn and change pictures
+
   const btnsPortfolio = document.querySelectorAll('.portfolio__btn')
   const btnListPortfolio = document.querySelector('.portfolio__list-btn');
   const imgPortfolio = document.querySelectorAll('.portfolio__picture');
@@ -22,6 +24,8 @@ window.addEventListener('DOMContentLoaded', function() {
       imgPortfolio.forEach((img, index) => img.src = `./assets/img/${season}/${index + 1}.jpg`);
     }
   }
+  
+  //image caching
 
   function preloadImages() {
     const seasons = ['winter', 'spring', 'summer', 'autumn'];
@@ -37,7 +41,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
   btnListPortfolio.addEventListener('click', changeImg);
 
-
+  // function for active btn
   function activeState(items, activeName) {
     for (let i = 0; i < items.length; i++) {
       if(items[i].classList.contains(activeName)) {
@@ -52,7 +56,8 @@ window.addEventListener('DOMContentLoaded', function() {
       el.target.classList.add('active-btn');
     })
   }
-
+  
+  // switch lang
   const rusLang = document.querySelector('.header__switch-ru');
   const engLang = document.querySelector('.header__switch-en');
   const translate = document.querySelectorAll('[data-i18]');
@@ -81,4 +86,47 @@ window.addEventListener('DOMContentLoaded', function() {
       el.target.classList.add('active-lang');
     })
   }
+
+  // change theme html
+
+  const iconChange = document.querySelector('.header__theme-change');
+  const headerCont = document.querySelector('.header__container');
+  const heroCont = document.querySelector('.hero__container');
+  const contactsCont = document.querySelector('.contacts__container');
+  const contactsInput = document.querySelectorAll('.contacts__form-input')
+  const contactsTextarea = document.querySelector('.contacts__form-textarea')
+  const title = document.querySelectorAll('.title');
+  const btnWhite = document.querySelectorAll('.btn-color-white');
+  const btnGold = document.querySelectorAll('.btn-light')
+  const htmlBackground = document.querySelector('html');
+  const themeChange = [iconChange, ...title, ...btnWhite, ...btnGold, htmlBackground, headerCont, heroCont, contactsCont, ...contactsInput, contactsTextarea];
+  let theme = 'dark';
+
+  iconChange.addEventListener('click', function() {
+    let sunMoon = iconChange.firstElementChild.href.baseVal;
+    let topic = (sunMoon === './assets/svg/sprite-light.svg#sun') ? 'light' : 'dark';
+    selectTheme(topic);
+  })
+
+  const selectTheme = (topic) => {
+    if(topic === 'light') {
+      themeChange.forEach((elem) => elem.classList.add('light-theme'));
+      iconChange.firstElementChild.href.baseVal = './assets/svg/sprite-light.svg#moon';
+      theme = 'light';
+      document.documentElement.style.setProperty('--text-color', '#000');
+      document.documentElement.style.setProperty('--active-switch', '#fff');
+      document.documentElement.style.setProperty('--color-line', '#000');
+      document.documentElement.style.setProperty('--btn-color', '#bdae82');
+
+    } else {
+      themeChange.forEach((elem) => elem.classList.remove('light-theme'));
+      iconChange.firstElementChild.href.baseVal = './assets/svg/sprite-light.svg#sun';
+      theme = 'dark';
+      document.documentElement.style.setProperty('--text-color', '#fff');
+      document.documentElement.style.setProperty('--active-switch', '#bdae82');
+      document.documentElement.style.setProperty('--color-line', '#bdae82');
+      document.documentElement.style.setProperty('--btn-color', '#000');
+    }
+  }
+  
 })
