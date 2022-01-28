@@ -322,7 +322,6 @@ input:-webkit-autofill:active {
 }
 
 .skills__logo {
-    margin-bottom: 50px;
     fill: var(--color-gold);
     text-align: center;
 }
