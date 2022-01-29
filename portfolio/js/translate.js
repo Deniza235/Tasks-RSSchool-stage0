@@ -12,7 +12,7 @@ const i18Obj = {
     'skill-text-1': 'High-quality photos in the studio and on the nature',
     'skill-title-2': 'Video shooting',
     'skill-text-2': 'Capture your moments so that they always stay with you',
-    'skill-title-3': 'Rotouch',
+    'skill-title-3': 'Retouch',
     'skill-text-3': 'I strive to make photography surpass reality',
     'skill-title-4': 'Audio',
     'skill-text-4': 'Professional sounds recording for video, advertising, portfolio',
@@ -37,6 +37,8 @@ const i18Obj = {
     'price-description-3-span-5': 'Make up, visage, hairstyle',
     'order': 'Order shooting',
     'contact-me': 'Contact me',
+    'phone': 'Phone',
+    'message': 'Message',
     'send-message': 'Send message'
   },
   'ru': {
@@ -77,6 +79,8 @@ const i18Obj = {
     'price-description-3-span-5': 'Макияж, визаж, прическа',
     'order': 'Заказать съемку',
     'contact-me': 'Свяжитесь со мной',
+    'phone': 'Телефон',
+    'message': 'Сообщение',
     'send-message': 'Отправить'
   }
 }
