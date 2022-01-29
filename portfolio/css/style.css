@@ -256,6 +256,10 @@ input:-webkit-autofill:active {
     color: var(--color-gold);
 }
 
+.header__light-theme {
+    margin-right: 23px;
+}
+
 .header__theme-change {
     width: 45px;
     height: 45px;
@@ -696,6 +700,11 @@ input:-webkit-autofill:active {
         background-size: auto 620px;
     }
 
+    .header__container.light-theme {
+        background-position: -5px -31px;
+        background-size: auto 620px;
+    }
+
     .header__nav {
         display: none;
     }
@@ -802,6 +811,11 @@ input:-webkit-autofill:active {
         background-size: auto 620px;
     }
 
+    .hero__container.light-theme {
+        background-position: -5px -121px;
+        background-size: auto 620px;
+    }
+
     .hero__title {
         margin-bottom: 20px;
         font-weight: normal;
@@ -828,13 +842,13 @@ input:-webkit-autofill:active {
     .skills__title::before {
         width: 115px;
         top: 119px;
-        left: 182px;
+        left: 140px;
     }
 
     .skills__title::after {
         width: 113px;
         top: 119px;
-        right: 183px;
+        right: 140px;
     }
 
     .skills__card {
@@ -874,13 +888,13 @@ input:-webkit-autofill:active {
     .portfolio__title::before {
         width: 88px;
         top: 119px;
-        left: 142px;
+        left: 110px;
     }
 
     .portfolio__title::after {
         width: 86px;
         top: 119px;
-        right: 143px
+        right: 110px
     }
 
     /*Video*/
@@ -912,6 +926,7 @@ input:-webkit-autofill:active {
         background-position: -5px 2px;
         background-size: auto 415px;
     }
+
 
     .video__player-icon {
         padding-top: 6px;
@@ -967,6 +982,11 @@ input:-webkit-autofill:active {
         background-position: -236px -1px;
         background-size: auto 604px;
     }
+
+    .contacts__container.light-theme {
+        background-position: -236px -1px;
+        background-size: auto 604px;
+    }
     
     .contacts__title {
         padding-top: 60px;
@@ -1002,14 +1022,19 @@ input:-webkit-autofill:active {
 
 @media (max-width: 620px) {
     .container {
-    width: 100%;
+        width: 100%;
     }
 
     /*Header*/
 
     .header__container {
-    background-position: -83px 19px;
-    background-size: auto 510px;
+        background-position: -83px 0;
+        background-size: auto 510px;
+    }
+
+    .header__container.light-theme {
+        background-position: -83px 0;
+        background-size: auto 510px;
     }
 
     .header__menu {
@@ -1023,7 +1048,12 @@ input:-webkit-autofill:active {
     .hero__container {
         height: 420px;
         padding-top: 36px;
-        background-position: -83px -71px;
+        background-position: -83px -90px;
+        background-size: auto 510px;
+    }
+
+    .hero__container.light-theme {
+        background-position: -83px -90px;
         background-size: auto 510px;
     }
 
@@ -1156,13 +1186,13 @@ input:-webkit-autofill:active {
     .skills__title::before {
         width: 75px;
         top: 77px;
-        left: 70px;
+        left: 40px;
     }
 
     .skills__title::after {
         width: 75px;
         top: 77px;
-        right: 70px;
+        right: 40px;
     }
 
 
@@ -1171,13 +1201,13 @@ input:-webkit-autofill:active {
     .portfolio__title::before {
         width: 55px;
         top: 90px;
-        left: 30px;
+        left: 0;
     }
 
     .portfolio__title::after {
         width: 55px;
         top: 90px;
-        right: 30px;
+        right: 0;
     }
 
 
@@ -1200,13 +1230,13 @@ input:-webkit-autofill:active {
     .price__title::before {
         width: 55px;
         top: 90px;
-        left: 60px;
+        left: 40px;
     }
 
     .price__title::after {
         width: 55px;
         top: 90px;
-        right: 60px;
+        right: 40px;
     }
 
     /*Contacts*/
@@ -1232,11 +1262,21 @@ input:-webkit-autofill:active {
         background-size: auto 425px;
     }
 
+    .header__container.light-theme {
+        background-position: -83px 0px;
+        background-size: auto 425px;
+    }
+
     /*Hero*/
 
     .hero__container {
         height: 350px;
         padding-top: 0;
+        background-position: -83px -75px;
+        background-size: auto 425px;
+    }
+
+    .hero__container.light-theme {
         background-position: -83px -75px;
         background-size: auto 425px;
     }
@@ -1282,13 +1322,13 @@ input:-webkit-autofill:active {
     .video__title::before {
         width: 45px;
         top: 90px;
-        left: 65px;
+        left: 45px;
     }
 
     .video__title::after {
         width: 45px;
         top: 90px;
-        right: 65px;
+        right: 45px;
     }
 }
 
@@ -1300,9 +1340,21 @@ input:-webkit-autofill:active {
         background-position: -137px 0px;
     }
 
+    .header__container.light-theme {
+        background-position: -137px 0px;
+    }
+
+    .header__light-theme {
+        margin-right: 0;
+    }
+
     /*Hero*/
 
     .hero__container {
+        background-position: -137px -75px;
+    }
+
+    .hero__container.light-theme {
         background-position: -137px -75px;
     }
     
@@ -1322,13 +1374,13 @@ input:-webkit-autofill:active {
     .skills__title::before {
         width: 40px;
         top: 77px;
-        left: 45px;
+        left: 20px;
     }
 
     .skills__title::after {
         width: 40px;
         top: 77px;
-        right: 45px;
+        right: 20px;
     }
 
     /*Portfolio*/
@@ -1336,13 +1388,13 @@ input:-webkit-autofill:active {
     .portfolio__title::before {
         width: 30px;
         top: 90px;
-        left: 30px;
+        left: 0;
     }
 
     .portfolio__title::after {
         width: 30px;
         top: 90px;
-        right: 30px;
+        right: 0;
     }
 
     /*Price*/
@@ -1350,13 +1402,13 @@ input:-webkit-autofill:active {
     .price__title::before {
         width: 45px;
         top: 90px;
-        left: 45px;
+        left: 30px;
     }
 
     .price__title::after {
         width: 45px;
         top: 90px;
-        right: 45px;
+        right: 30px;
     }
 
     /*Video*/
