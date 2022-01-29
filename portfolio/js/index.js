@@ -14,18 +14,14 @@ window.addEventListener('DOMContentLoaded', function() {
   // portfolio btn and change pictures
 
   //image caching
-  function preloadImages() {
-    const seasons = ['winter', 'spring', 'summer', 'autumn'];
+  const seasons = ['winter', 'spring', 'summer', 'autumn'];
     seasons.forEach((elem) => {
-      for(let i = 1; i <= 6; i++) {
+      for(let i = 1; i < 6; i++) {
         const img = new Image();
         img.src = `./assets/img/${elem}/${i}.jpg`;
       }
     })
-  }
-
-  preloadImages();
-
+  
   const btnsPortfolio = document.querySelectorAll('.portfolio__btn')
   const btnListPortfolio = document.querySelector('.portfolio__list-btn');
   const imgPortfolio = document.querySelectorAll('.portfolio__picture');
@@ -38,8 +34,6 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  //image caching
-
   btnListPortfolio.addEventListener('click', changeImg);
 
   // function for active btn
@@ -131,5 +125,27 @@ window.addEventListener('DOMContentLoaded', function() {
       document.documentElement.style.setProperty('--btn-color', '#000');
     }
   }
+
+  // Local Storage
+  
+  let lang = 'en';
+
+  function setLocalStorage() {
+    localStorage.setItem('lang', lang);
+    localStorage.setItem('theme', theme);
+  }
+  window.addEventListener('beforeunload', setLocalStorage);
+
+  function getLocalStorage() {
+    if(localStorage.getItem('lang')) {
+      const lang = localStorage.getItem('lang');
+      getTranslate(lang);
+    }
+    if(localStorage.getItem('theme')) {
+      const theme = localStorage.getItem('theme');
+      selectTheme(theme);
+    }
+  }
+  window.addEventListener('load', getLocalStorage);
   
 })
