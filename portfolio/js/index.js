@@ -91,6 +91,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
   const iconChange = document.querySelector('.header__theme-change');
   const headerCont = document.querySelector('.header__container');
+  const headerOverlay = document.querySelector('.header__bg-overlay');
+  const headerMenu = document.querySelector('.header__menu');
   const heroCont = document.querySelector('.hero__container');
   const contactsCont = document.querySelector('.contacts__container');
   const contactsInput = document.querySelectorAll('.contacts__form-input')
@@ -99,7 +101,7 @@ window.addEventListener('DOMContentLoaded', function() {
   const btnWhite = document.querySelectorAll('.btn-color-white');
   const btnGold = document.querySelectorAll('.btn-light')
   const htmlBackground = document.querySelector('html');
-  const themeChange = [iconChange, ...title, ...btnWhite, ...btnGold, htmlBackground, headerCont, heroCont, contactsCont, ...contactsInput, contactsTextarea];
+  const themeChange = [iconChange, ...title, ...btnWhite, ...btnGold, htmlBackground, headerCont, headerOverlay, headerMenu, heroCont, contactsCont, ...contactsInput, contactsTextarea];
   let theme = 'dark';
 
   iconChange.addEventListener('click', function() {

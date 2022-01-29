@@ -292,6 +292,10 @@ input:-webkit-autofill:active {
     transition: opacity .5s ease-in-out;
 }
 
+.header__bg-overlay.light-theme {
+    opacity: 0.3;
+}
+
 /*Hero*/
 
 .hero__container {
@@ -445,11 +449,6 @@ input:-webkit-autofill:active {
     border: 2px solid var(--color-gold);
     background-color: var(--btn-color);
     color: var(--color-gold);
-}
-
-.portfolio__btn:last-child:active {
-    color: var(--btn-color);
-    background-color: var(--color-line);
 }
 
 .portfolio__btn.active-btn {
@@ -798,7 +797,11 @@ input:-webkit-autofill:active {
         color: var(--text-color);
         background-color: var(--color-black);
         transition: all .5s ease-in-out;
-    } 
+    }
+    
+    .header__menu.light-theme {
+        background-color: var(--color-white);
+    }
 
     .header__menu-item {
         margin-bottom: 16px;
