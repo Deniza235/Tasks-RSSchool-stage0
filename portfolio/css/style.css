@@ -447,6 +447,11 @@ input:-webkit-autofill:active {
     color: var(--color-gold);
 }
 
+.portfolio__btn:last-child:active {
+    color: var(--btn-color);
+    background-color: var(--color-line);
+}
+
 .portfolio__btn.active-btn {
     color: var(--btn-color);
     background-color: var(--color-line);
