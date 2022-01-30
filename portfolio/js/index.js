@@ -137,7 +137,6 @@ window.addEventListener('DOMContentLoaded', function() {
       getTranslate(lang);
     }
 
-
     if(localStorage.getItem('theme')) {
       const theme = localStorage.getItem('theme');
       selectTheme(theme);
