@@ -143,6 +143,7 @@ input:-webkit-autofill:active {
 
 .btn:hover {
     color: var(--color-white);
+    box-shadow: 0 12px 16px 0 rgba(255,255,255,0.8), 0 17px 50px 0 rgba(255,255,255,0.8);
 }
 
 .btn-set {
@@ -176,6 +177,7 @@ input:-webkit-autofill:active {
 .btn-light.light-theme:hover {
     background-color: var(--color-black);
     color: var(--color-gold);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.25), 0 17px 50px 0 rgba(0,0,0,0.4);
 }
 
 /*Header*/
@@ -494,6 +496,7 @@ input:-webkit-autofill:active {
 }
 
 .video__play-btn {
+    border-radius: 50%;
     position: absolute;
     fill: var(--text-color);
     transition: fill 0.5s;
@@ -501,12 +504,14 @@ input:-webkit-autofill:active {
 
 .video__play-btn:hover {
     fill: var(--color-gold);
+    box-shadow: none;
 }
 
 .video__player-icon {
     width: 130px;
     height: 130px;
 }
+
 
 /*Price*/
 
