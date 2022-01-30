@@ -55,23 +55,8 @@ window.addEventListener('DOMContentLoaded', function() {
   // switch lang
   const rusLang = document.querySelector('.header__switch-ru');
   const engLang = document.querySelector('.header__switch-en');
-  const translate = document.querySelectorAll('[data-i18]');
-
-  rusLang.addEventListener('click', getTranslate);
-  engLang.addEventListener('click', getTranslateReverse);
-  
-
-  function getTranslate () {
-    translate.forEach((elem) => 
-      elem.textContent = i18Obj['ru'][elem.dataset.i18]
-    );
-  }
-
-  function getTranslateReverse () {
-    translate.forEach((elem) => 
-      elem.textContent = i18Obj['en'][elem.dataset.i18]
-    );
-  }
+  const translate = document.querySelectorAll('[data-i18n]');
+  let lang = 'en';
 
   const switcher = document.querySelectorAll('.switch');
 
@@ -82,6 +67,17 @@ window.addEventListener('DOMContentLoaded', function() {
     })
   }
 
+  rusLang.addEventListener('click', ()  => {getTranslate('ru')});
+  engLang.addEventListener('click', () => {getTranslate('en')});
+
+  function getTranslate (lang) {
+    translate.forEach((elem) => 
+      elem.textContent = i18Obj[lang][elem.dataset.i18n]
+    );
+  }
+
+  
+  
   // change theme html
 
   const iconChange = document.querySelector('.header__theme-change');
@@ -114,7 +110,6 @@ window.addEventListener('DOMContentLoaded', function() {
       document.documentElement.style.setProperty('--active-switch', '#fff');
       document.documentElement.style.setProperty('--color-line', '#000');
       document.documentElement.style.setProperty('--btn-color', '#bdae82');
-
     } else {
       themeChange.forEach((elem) => elem.classList.remove('light-theme'));
       iconChange.firstElementChild.href.baseVal = './assets/svg/sprite-light.svg#sun';
@@ -127,9 +122,6 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 
   // Local Storage
-  
-  let lang = 'en';
-
   function setLocalStorage() {
     localStorage.setItem('lang', lang);
     localStorage.setItem('theme', theme);
@@ -138,14 +130,15 @@ window.addEventListener('DOMContentLoaded', function() {
 
   function getLocalStorage() {
     if(localStorage.getItem('lang')) {
-      const lang = localStorage.getItem('lang');
+      let lang = localStorage.getItem('lang');
       getTranslate(lang);
     }
+
+
     if(localStorage.getItem('theme')) {
       const theme = localStorage.getItem('theme');
       selectTheme(theme);
     }
   }
   window.addEventListener('load', getLocalStorage);
-  
 })
