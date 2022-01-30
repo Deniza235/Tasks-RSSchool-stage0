@@ -64,9 +64,13 @@ window.addEventListener('DOMContentLoaded', function() {
   engLang.addEventListener('click', () => {getTranslate('en')});
 
   function getTranslate (language) {
-    translate.forEach((elem) => 
-      elem.textContent = i18Obj[language][elem.dataset.i18n]
-    );
+    translate.forEach((elem) => {
+      if(["input", "textarea"].includes(elem.localName)) {
+        elem.placeholder = i18Obj[language][elem.dataset.i18n]
+      } else {
+        elem.textContent = i18Obj[language][elem.dataset.i18n];
+      }
+    });
       lang = language;
       [rusLang, engLang].forEach((elem) => {
       if (elem.id === lang) {
