@@ -60,23 +60,22 @@ window.addEventListener('DOMContentLoaded', function() {
 
   const switcher = document.querySelectorAll('.switch');
 
-  for(let i = 0; i < switcher.length; i++) {
-    switcher[i].addEventListener('click', function(el) {
-      activeState(switcher, 'active-lang');
-      el.target.classList.add('active-lang');
-    })
-  }
-
   rusLang.addEventListener('click', ()  => {getTranslate('ru')});
   engLang.addEventListener('click', () => {getTranslate('en')});
 
-  function getTranslate (lang) {
+  function getTranslate (language) {
     translate.forEach((elem) => 
-      elem.textContent = i18Obj[lang][elem.dataset.i18n]
+      elem.textContent = i18Obj[language][elem.dataset.i18n]
     );
+      lang = language;
+      [rusLang, engLang].forEach((elem) => {
+      if (elem.id === lang) {
+        elem.classList.add('active-lang');
+      } else {
+        elem.classList.remove('active-lang');
+      }
+      })
   }
-
-  
   
   // change theme html
 
