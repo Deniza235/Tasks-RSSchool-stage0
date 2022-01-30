@@ -138,7 +138,7 @@ input:-webkit-autofill:active {
     border: none;
     background: transparent;
     cursor: pointer;
-    transition: color 0.5s;
+    transition: all .5s;
 }
 
 .btn:hover {
@@ -171,7 +171,7 @@ input:-webkit-autofill:active {
 .btn-light.light-theme {
     background-color: var(--color-gold);
     color: var(--color-black);
-    transition: all 0.5s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 
 .btn-light.light-theme:hover {
