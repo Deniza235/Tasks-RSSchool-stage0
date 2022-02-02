@@ -138,7 +138,7 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     if(localStorage.getItem('theme')) {
-      const theme = localStorage.getItem('theme');
+      let theme = localStorage.getItem('theme');
       selectTheme(theme);
     }
   }
