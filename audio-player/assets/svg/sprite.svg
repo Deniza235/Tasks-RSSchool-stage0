@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol viewBox="0 0 24 24" id="list-music">
+    <g>
+      <rect fill="none" height="24" width="24"></rect>
+    </g>
+    <g>
+      <path d="M22,6h-5v8.18C16.69,14.07,16.35,14,16,14c-1.66,0-3,1.34-3,3s1.34,3,3,3s3-1.34,3-3V8h3V6z M15,6H3v2h12V6z M15,10H3v2h12 V10z M11,14H3v2h8V14z"></path>
+    </g>
+  </symbol>
+  <symbol viewBox="0 0 24 24" id="pause">
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" id="play">
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" id="repeat-one">
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4zm-4-2V9h-1l-2 1v1h1.5v4H13z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" id="repeat">
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" id="shuffle">
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" id="skip-next">
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M6 18l8.5-6L6 6v12zm2-8.14L11.03 12 8 14.14V9.86zM16 6h2v12h-2z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" id="skip-previous">
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M6 6h2v12H6zm3.5 6l8.5 6V6l-8.5 6zm6.5 2.14L12.97 12 16 9.86v4.28z"></path>
+  </symbol>
+</svg>

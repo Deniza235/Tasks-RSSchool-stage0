@@ -7,9 +7,46 @@
   <link rel="shortcut icon" href="./assets/library-music.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
-  <title>Player</title>
+  <title>Audio player</title>
 </head>
 <body>
-  
+  <div class="player__wrapper">
+    <div class="player__title">Now playing</div>
+    <div class="player__cover">
+      <img src="./assets/jpg/image-1.jpg" alt="cover" class="player__cover-image">
+    </div>
+    <div class="player__song">
+      <p class="player__song-name">Leave a Light On</p>
+      <p class="player__song-artist">Tom Walker</p>
+    </div>
+    <div class="player__progress">
+      <input type="range" value="40" min="0" max="100" step="1" class="player__progress-bar">
+    </div>
+    <div class="player__timer">
+      <span class="player__current-time">00:00</span>
+      <span class="player__finish-time">03:05</span>
+    </div>
+    <div class="player__controls">
+      <svg class="controls-btn player__repeat">
+        <use xlink:href="./assets/svg/sprite.svg#repeat"></use>
+      </svg>
+      <svg class="controls-btn player__skip-previous">
+        <use xlink:href="./assets/svg/sprite.svg#skip-previous"></use>
+      </svg>
+      <div class="player__play-pause">
+        <svg class="player__play">
+          <use xlink:href="./assets/svg/sprite.svg#play"></use>
+        </svg>
+      </div>
+      <svg class="controls-btn player__skip-next">
+        <use xlink:href="./assets/svg/sprite.svg#skip-next"></use>
+      </svg>
+      <svg class="controls-btn player__list-music">
+        <use xlink:href="./assets/svg/sprite.svg#list-music"></use>
+      </svg>
+    </div>
+  </div>
+
+  <script src="./js/index.js"></script>
 </body>
 </html>
