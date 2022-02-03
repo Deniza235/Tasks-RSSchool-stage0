@@ -27,13 +27,15 @@ html {
 
 body {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   min-height: 100vh;
   background: radial-gradient(#edf1cf, #43acb4); 
 }
 
 .player__wrapper {
+  margin-bottom: 15px;
   width: 330px;
   padding: 25px 30px;
   overflow: hidden;
@@ -158,4 +160,25 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.footer {
+  width: 330px;
+  height: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  color: #515C6F;
+}
+
+.footer__link-github {
+  text-decoration: none;
+  color: #515C6F;
+}
+
+
+.footer__link-course {
+  width: 75px;
+  height: 30px;
 }
