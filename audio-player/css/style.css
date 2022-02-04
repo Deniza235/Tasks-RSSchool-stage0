@@ -87,26 +87,48 @@ body {
   color: #515C6F;
 }
 
+.player__progress {
+  margin-bottom: 15px;
+  position: relative;
+  height: 6px;
+  width: 100%;
+  border-radius: 50px;
+  background: rgba(206, 202, 202, .3);
+  cursor: pointer;
+}
 
 .player__progress-bar {
-  width: 100%;
-  background: linear-gradient(to right, #73eba1 0%, #10bcc9 40%, #fff 40%, #fff 100%);
-  border: solid 2px #73eba1;
-  border-radius: 8px;
-  height: 7px;
-  outline: none;
+  height: inherit;
+  width: 0%;
+  position: relative;
+  border-radius: inherit;
+  position: relative;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #73eba1 0%, #10bcc9 100%);
   transition: background 450ms ease-in;
-  -webkit-appearance: none;
 }
 
-.player__progress-bar::-webkit-slider-thumb {
-  width: 15px;
-  height: 15px;
+.player__progress-bar::before {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
   border-radius: 50%;
-  -webkit-appearance: none;
-  cursor: grab;
-  background: radial-gradient(#edf1cf, #20e3b2);
+  top: 50%;
+  right: -5px;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+  background: radial-gradient(#73eba1 15%, #10bcc9);
+  transition: opacity 0.2s ease;
 }
+
+.player__progress:hover .player__progress-bar::before {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
 .player__timer {
   display: flex;

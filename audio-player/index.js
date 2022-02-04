@@ -52,9 +52,12 @@ window.addEventListener('DOMContentLoaded', function() {
   const playPauseBtn = document.querySelector('.player__play');
   const nextSongBtn = document.querySelector('.player__skip-next');
   const prevSongBtn = document.querySelector('.player__skip-previous');
+  const progressLine = document.querySelector('.player__progress');
   const progressBar = document.querySelector('.player__progress-bar');
+  const curTime = document.querySelector('.player__current-time');
+  const endTime = document.querySelector('.player__finish-time')
 
-  let songIndex = 1;
+  let songIndex = 3;
 
   window.addEventListener('load', () => {
     loadMusic(songIndex);
@@ -117,11 +120,45 @@ window.addEventListener('DOMContentLoaded', function() {
   })
 
   // progress-bar
-  progressBar.addEventListener('input', function() {
-    const value = this.value;
-    this.style.background = `linear-gradient(to right, #73eba1 0%, #10bcc9 ${value}%, #fff ${value}%, white 100%)`
-  })
+  
+  progressLine.addEventListener('click', (elem) => {
+    let progressValue = progressLine.clientWidth;
+    let clickOffsetX = elem.offsetX;
+    let songDuration = audio.duration;
 
+    audio.currentTime = (clickOffsetX /  progressValue) * songDuration;
+    playMusic();
+  })
+  
+  //duration and current time music
+  audio.addEventListener('timeupdate', (el) => {
+    const currentTime = el.target.currentTime; // current time of song
+    const duration = el.target.duration; // total duration of song
+    let progress = (currentTime / duration) * 100;
+    progressBar.style.width = `${progress}%`;
+
+    let musicCurrentTime = curTime;
+    let musicDuration = endTime;
+
+    audio.addEventListener('loadeddata', () => {
+      // update total duration
+      let audioDuration = audio.duration;
+      let totalMinutes = Math.floor(audioDuration / 60);
+      let totalSeconds = Math.floor(audioDuration % 60);
+      if(totalSeconds < 10) {
+        totalSeconds = `0${totalSeconds}`;
+      }
+      musicDuration.innerText = `${totalMinutes}:${totalSeconds}`; 
+      
+    })
+    // update current time songs
+    let currentMinutes = Math.floor(currentTime / 60);
+    let currentSeconds = Math.floor(currentTime % 60);
+    if(currentSeconds < 10) {
+      currentSeconds = `0${currentSeconds}`;
+    }
+    musicCurrentTime.innerText = `${currentMinutes}:${currentSeconds}`;
+  })
 })
 
 
