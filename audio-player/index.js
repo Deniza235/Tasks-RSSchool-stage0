@@ -49,10 +49,9 @@ window.addEventListener('DOMContentLoaded', function() {
   const songName = document.querySelector('.player__song-name');
   const songArtist = document.querySelector('.player__song-artist');
   const audio = document.querySelector('.player__audio');
-  const playPause = document.querySelector('.player__play');
-  // const play = document.querySelector('.player__play');
-  const nextSong = document.querySelector('.player__skip-next');
-  const prevSong = document.querySelector('.player__skip-previous');
+  const playPauseBtn = document.querySelector('.player__play');
+  const nextSongBtn = document.querySelector('.player__skip-next');
+  const prevSongBtn = document.querySelector('.player__skip-previous');
   const progressBar = document.querySelector('.player__progress-bar');
 
   let songIndex = 1;
@@ -73,7 +72,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
   function playMusic() {
     player.classList.add('pause');
-    playPause.firstElementChild.href.baseVal = './assets/svg/sprite.svg#pause';
+    playPauseBtn.firstElementChild.href.baseVal = './assets/svg/sprite.svg#pause';
     audio.play();
   }
 
@@ -81,14 +80,40 @@ window.addEventListener('DOMContentLoaded', function() {
 
   function pauseMusic() {
     player.classList.remove('pause');
-    playPause.firstElementChild.href.baseVal = './assets/svg/sprite.svg#play';
+    playPauseBtn.firstElementChild.href.baseVal = './assets/svg/sprite.svg#play';
     audio.pause();
   }
 
   // event btn music or play
-  playPause.addEventListener('click', () => {
+  playPauseBtn.addEventListener('click', () => {
     const isPauseMusic = player.classList.contains('pause');
     isPauseMusic ? pauseMusic() : playMusic();
+  })
+
+  // next song
+  
+  function nextMusic() {
+    songIndex++;
+    songIndex > allMusic.length ? songIndex = 1 : songIndex = songIndex;
+    loadMusic(songIndex);
+    playMusic();
+  }
+
+  nextSongBtn.addEventListener('click', () => {
+    nextMusic();
+  })
+
+  // prev song
+
+  function prevMusic() {
+    songIndex--;
+    songIndex < 1 ? songIndex = allMusic.length : songIndex = songIndex;
+    loadMusic(songIndex);
+    playMusic();
+  }
+
+  prevSongBtn.addEventListener('click', () => {
+    prevMusic();
   })
 
   // progress-bar
