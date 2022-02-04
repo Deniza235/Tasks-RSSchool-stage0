@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', function() {
-
   let allMusic = [
     {
       name: 'Leave a Light On',
@@ -46,14 +45,51 @@ window.addEventListener('DOMContentLoaded', function() {
   ];
 
   const player = document.querySelector('.player__wrapper');
-  const cover = document.querySelector('.player__cover');
+  const cover = document.querySelector('.player__cover-image');
   const songName = document.querySelector('.player__song-name');
   const songArtist = document.querySelector('.player__song-artist');
-  const play = document.querySelector('.player__play');
+  const audio = document.querySelector('.player__audio');
+  const playPause = document.querySelector('.player__play');
+  // const play = document.querySelector('.player__play');
   const nextSong = document.querySelector('.player__skip-next');
   const prevSong = document.querySelector('.player__skip-previous');
   const progressBar = document.querySelector('.player__progress-bar');
 
+  let songIndex = 1;
+
+  window.addEventListener('load', () => {
+    loadMusic(songIndex);
+  })
+
+  // load music
+  function loadMusic(numIndex) {
+    songName.innerText = allMusic[numIndex - 1].name;
+    songArtist.innerText = allMusic[numIndex - 1].artist;
+    cover.src = `./assets/jpg/${allMusic[numIndex - 1].img}.jpg`;
+    audio.src = `./assets/audio/${allMusic[numIndex - 1].src}.mp3`;
+  }
+
+  //play music 
+
+  function playMusic() {
+    player.classList.add('pause');
+    playPause.firstElementChild.href.baseVal = './assets/svg/sprite.svg#pause';
+    audio.play();
+  }
+
+  //pause music 
+
+  function pauseMusic() {
+    player.classList.remove('pause');
+    playPause.firstElementChild.href.baseVal = './assets/svg/sprite.svg#play';
+    audio.pause();
+  }
+
+  // event btn music or play
+  playPause.addEventListener('click', () => {
+    const isPauseMusic = player.classList.contains('pause');
+    isPauseMusic ? pauseMusic() : playMusic();
+  })
 
   // progress-bar
   progressBar.addEventListener('input', function() {
