@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./assets/library-music.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
   <title>Audio player</title>
@@ -28,23 +29,13 @@
     </div>
     <audio src="#" class="player__audio"></audio>
     <div class="player__controls">
-      <svg class="controls-btn player__repeat">
-        <use xlink:href="./assets/svg/sprite.svg#repeat"></use>
-      </svg>
-      <svg class="controls-btn player__skip-previous">
-        <use xlink:href="./assets/svg/sprite.svg#skip-previous"></use>
-      </svg>
+      <span class="material-icons-outlined controls-btn player__repeat">repeat</span>
+      <span class="material-icons-outlined controls-btn player__skip-previous">skip_previous</span>
       <div class="player__play-pause">
-        <svg class="player__play">
-          <use xlink:href="./assets/svg/sprite.svg#play"></use>
-        </svg>
+        <span class="material-icons-outlined player__play">play_arrow</span>
       </div>
-      <svg class="controls-btn player__skip-next">
-        <use xlink:href="./assets/svg/sprite.svg#skip-next"></use>
-      </svg>
-      <svg class="controls-btn player__list-music">
-        <use xlink:href="./assets/svg/sprite.svg#list-music"></use>
-      </svg>
+      <span class="material-icons-outlined controls-btn player__skip-next">skip_next</span>
+      <span class="material-icons-outlined controls-btn player__queue_music">queue_music</span>
     </div>
   </div>
   <footer class="footer">

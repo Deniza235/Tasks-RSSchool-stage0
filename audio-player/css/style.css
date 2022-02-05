@@ -141,13 +141,20 @@ body {
   margin: 25px 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .controls-btn {
   width: 40px;
   height: 40px;
+  font-size: 34px;
   cursor: pointer;
-  fill: #73eba1;
+  color: #73eba1;
+}
+
+.player__skip-previous,
+.player__skip-next {
+  font-size: 43px;
 }
 
 .player__play-pause {
@@ -161,7 +168,6 @@ body {
   border-radius: 50%;
   background: linear-gradient(#ffffff 0%, #cecaca 100%);
   box-shadow: 0px 0px 5px #10bcc9;
-  /* background: radial-gradient(#10bcc9, #73eba1, #10bcc9); */
 }
 
 .player__play-pause::before {
@@ -177,7 +183,8 @@ body {
   position: absolute;
   width: 35px;
   height: 35px;
-  fill: #e6e5e5;
+  font-size: 37px;
+  line-height: 35px;
   background: inherit;
   background-clip: text;
   -webkit-background-clip: text;

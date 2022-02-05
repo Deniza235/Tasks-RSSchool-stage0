@@ -52,6 +52,8 @@ window.addEventListener('DOMContentLoaded', function() {
   const playPauseBtn = document.querySelector('.player__play');
   const nextSongBtn = document.querySelector('.player__skip-next');
   const prevSongBtn = document.querySelector('.player__skip-previous');
+  const repeatBtn = document.querySelector('.player__repeat');
+  const shuffleBtn = document.querySelector('.player__shuffle');
   const progressLine = document.querySelector('.player__progress');
   const progressBar = document.querySelector('.player__progress-bar');
   const curTime = document.querySelector('.player__current-time');
@@ -159,7 +161,42 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     musicCurrentTime.innerText = `${currentMinutes}:${currentSeconds}`;
   })
-})
 
+  //repeat songs
 
+  function repeatAllMusic() {
+    repeatBtn.classList.add('repeat');
+    repeatBtn.firstElementChild.href.baseVal = './assets/svg/sprite.svg#repeat';
+    nextMusic();
+  }
+  
+  
+  // shuffle songs
+  function randomSong() {
+    let randomIndex = Math.floor((Math.random() * allMusic.length) + 1);
+    do {
+      randomIndex = Math.floor((Math.random() * allMusic.length) + 1);
+    } while(songIndex = randomIndex);
+    songIndex = randomIndex;
+  }
 
+  function shuffleSong() {
+    repeatBtn.classList.remove('repeat');
+    repeatBtn.firstElementChild.href.baseVal = './assets/svg/sprite.svg#shuffle';
+
+    randomSong();
+    loadMusic();
+    playMusic();
+  }
+
+  
+  repeatBtn.addEventListener('click', () => {
+
+    const isRepeatAllMusic = repeatBtn.classList.contains('repeat');
+    isRepeatAllMusic ? repeatAllMusic() : shuffleSong();
+  })
+
+  audio.addEventListener('ended', () => {
+    nextMusic();
+  })
+})    
