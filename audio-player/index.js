@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', function() {
   const nextSongBtn = document.querySelector('.player__skip-next');
   const prevSongBtn = document.querySelector('.player__skip-previous');
   const repeatBtn = document.querySelector('.player__repeat');
-  const shuffleBtn = document.querySelector('.player__shuffle');
+  const likeBtn = document.querySelector('.player__like');
   const progressLine = document.querySelector('.player__progress');
   const progressBar = document.querySelector('.player__progress-bar');
   const curTime = document.querySelector('.player__current-time');
@@ -77,7 +77,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
   function playMusic() {
     player.classList.add('pause');
-    playPauseBtn.firstElementChild.href.baseVal = './assets/svg/sprite.svg#pause';
+    likeBtn.classList.add('play');
+    playPauseBtn.innerText = 'pause';
     audio.play();
   }
 
@@ -85,7 +86,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
   function pauseMusic() {
     player.classList.remove('pause');
-    playPauseBtn.firstElementChild.href.baseVal = './assets/svg/sprite.svg#play';
+    likeBtn.classList.remove('play');
+    playPauseBtn.innerText = 'play_arrow';
     audio.pause();
   }
 
@@ -162,41 +164,51 @@ window.addEventListener('DOMContentLoaded', function() {
     musicCurrentTime.innerText = `${currentMinutes}:${currentSeconds}`;
   })
 
-  //repeat songs
-
-  function repeatAllMusic() {
-    repeatBtn.classList.add('repeat');
-    repeatBtn.firstElementChild.href.baseVal = './assets/svg/sprite.svg#repeat';
-    nextMusic();
-  }
-  
-  
-  // shuffle songs
-  function randomSong() {
-    let randomIndex = Math.floor((Math.random() * allMusic.length) + 1);
-    do {
-      randomIndex = Math.floor((Math.random() * allMusic.length) + 1);
-    } while(songIndex = randomIndex);
-    songIndex = randomIndex;
-  }
-
-  function shuffleSong() {
-    repeatBtn.classList.remove('repeat');
-    repeatBtn.firstElementChild.href.baseVal = './assets/svg/sprite.svg#shuffle';
-
-    randomSong();
-    loadMusic();
-    playMusic();
-  }
-
-  
+  //repeat, repeat-one and shuffle
   repeatBtn.addEventListener('click', () => {
+    let textIcon = repeatBtn.innerText;
 
-    const isRepeatAllMusic = repeatBtn.classList.contains('repeat');
-    isRepeatAllMusic ? repeatAllMusic() : shuffleSong();
+    switch(textIcon) {
+      case 'repeat':
+        repeatBtn.innerText = 'repeat_one';
+        break;
+      case 'repeat_one':
+        repeatBtn.innerText = 'shuffle';
+        break;
+      case 'shuffle':
+        repeatBtn.innerText = 'repeat';
+        break;
+    }
   })
 
+  //ended song
   audio.addEventListener('ended', () => {
-    nextMusic();
+    
+    let textIcon = repeatBtn.innerText;
+
+    switch(textIcon) {
+      case 'repeat':
+        nextMusic();
+        break;
+      case 'repeat_one':
+        audio.currentTime = 0;
+        loadMusic(songIndex);
+        playMusic();
+        break;
+      case 'shuffle':
+        let randomIndex = Math.floor((Math.random() * allMusic.length) + 1);
+
+        do {
+          randomIndex = Math.floor((Math.random() * allMusic.length) + 1);
+        } while(songIndex === randomIndex) {
+          songIndex = randomIndex;
+          loadMusic(songIndex);
+          playMusic();
+        }
+        break;
+    }
   })
+
+
+    
 })    
