@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  --font-color: rgba(111, 175, 212, 0.788);
+  --bg-color: rgba(255, 255, 255, .3);
+  --body-color: #08051d;
+}
+
 html {
   font-family: 'Montserrat', sans-serif;
 }
@@ -15,8 +21,13 @@ body {
   width: 100%;
   height: 100vh;
   position: relative;
+  background: #08051d;
+  scroll-behavior: smooth;
   overflow: hidden;
-  background: #000200;
+}
+
+::placeholder {
+  color: var(--font-color);
 }
 
 .container {
@@ -32,8 +43,8 @@ body {
   justify-content: space-between;
   align-items: center;
   font-family: 'Montserrat Subrayada', sans-serif;
-  color: rgba(111, 175, 212, 0.788);
-  background-color: rgba(255, 255, 255, .3);
+  color: var(--font-color);
+  background-color: var(--bg-color);
 }
 
 .header__logo {
@@ -51,14 +62,36 @@ body {
 }
 
 .header__form-input {
+  padding: 10px;
   width: 200px;
   height: 30px;
-  border: 2px solid rgba(111, 175, 212, 0.788);
+  color: var(--font-color);
+  border: 2px solid var(--font-color);
   border-radius: 15px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 8px;
+  font-size: 14px;
   font-weight: 500;
-  background-color: transparent;
+  background-color: var(--body-color);
+}
+
+.header__form-input:focus {
+  outline: none;
+}
+
+.main {
+  padding: 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+}
+
+.main__movie-card {
+  width: 300px;
+  z-index: 15;
+}
+
+.main__movie-poster {
+  width: 100%;
 }
 
 .footer {
@@ -66,13 +99,13 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  color: rgba(111, 175, 212, 0.788);
-  background-color: rgba(255, 255, 255, .3);
+  color: var(--font-color);
+  background-color: var(--bg-color);
 }
 
 .footer__link-github {
   text-decoration: none;
-  color: rgba(111, 175, 212, 0.788);
+  color: var(--font-color);
 }
 
 .footer__logo {
@@ -88,6 +121,7 @@ body {
   height: 100%;
   pointer-events: none;
   animation: shine 8s ease-in-out infinite, backgroundmove 16s linear infinite;
+  z-index: 5;
 }
 
 .background__star.star-1 {
