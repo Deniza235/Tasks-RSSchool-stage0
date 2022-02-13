@@ -5,7 +5,7 @@
 }
 
 :root {
-  --font-color: rgba(111, 175, 212, 0.788);
+  --font-color: rgba(111, 175, 212, 0.9);
   --bg-color: rgba(255, 255, 255, .3);
   --body-color: #08051d;
 }
@@ -88,9 +88,20 @@ body {
 
 .main__movie-card {
   width: 300px;
+  position: relative;
+  border-radius: 5px;
   background-color: var(--bg-color);
-  z-index: 15;
+  z-index: 10;
+  overflow: hidden;
+  box-shadow: 5px 7px 10px rgba(255, 255, 255, .5);
 }
+
+.main__movie-poster {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
 
 .main__movie-info {
   padding: 10px;
@@ -98,6 +109,10 @@ body {
   justify-content: space-between;
   align-items: center;
   color: var(--font-color);
+}
+
+.main__movie-title {
+  font-size: 20px;
 }
 
 .main__movie-info span {
@@ -109,7 +124,7 @@ body {
 }
 
 .main__movie-info span.green {
-  color: green;
+  color: lime;
 }
 
 .main__movie-info span.orange {
@@ -119,8 +134,23 @@ body {
   color: red;
 }
 
-.main__movie-poster {
+
+.main__movie-overview {
+  padding: 15px;
   width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background-color: var(--font-color);
+  transform: translateY(101%);
+  transition: all .4s ease-in-out;
+  overflow-x: hidden;
+}
+
+.main__movie-card:hover .main__movie-overview {
+  transform: translateY(0%);
 }
 
 .footer {

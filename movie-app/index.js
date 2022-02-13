@@ -6,6 +6,7 @@ const movieContainer = document.querySelector('.main');
 const form = document.querySelector('.header__form');
 const searchForm = document.querySelector('.header__form-input');
 const searchLink = urlOrigin + '/search/movie?' + apiKey;
+const error = 'Nothing found for your request';
 
 
 async function getData(url) {
@@ -64,7 +65,8 @@ function getColorVote(vote_average) {
   }
 }
 
-form.addEventListener('submit', (el) => {
+form.addEventListener('submit', async (el) => {
+
   el.preventDefault();
 
   let searchList = searchForm.value;
