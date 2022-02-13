@@ -31,15 +31,19 @@ function showMovies(data) {
     imageMovie.alt = `${title}`;
     movie.append(imageMovie);
 
+    let movieInfo = document.createElement('div');
+    movieInfo.classList.add('main__movie-info');
+    movie.append(movieInfo);
+
     let titleMovie = document.createElement('h2');
     titleMovie.classList.add('main__movie-title');
     titleMovie.textContent = `${title}`;
-    movie.append(titleMovie);
+    movieInfo.append(titleMovie);
 
     let voteMovie = document.createElement('span');
-    voteMovie.classList.add(`${getColorVote(voteMovie)}`);
+    voteMovie.classList.add(`${getColorVote(vote_average)}`);
     voteMovie.textContent = `${vote_average}`;
-    movie.append(voteMovie);
+    movieInfo.append(voteMovie);
 
     let overviewMovie = document.createElement('p');
     overviewMovie.classList.add('main__movie-overview');
