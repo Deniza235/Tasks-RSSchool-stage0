@@ -19,11 +19,11 @@ body {
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: relative;
-  background: #08051d;
+  background: var(--body-color);
   scroll-behavior: smooth;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 ::placeholder {
@@ -82,12 +82,41 @@ body {
   padding: 30px 0;
   display: flex;
   flex-wrap: wrap;
-  overflow-x: hidden;
+  justify-content: center;
+  gap: 35px;
 }
 
 .main__movie-card {
   width: 300px;
+  background-color: var(--bg-color);
   z-index: 15;
+}
+
+.main__movie-info {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--font-color);
+}
+
+.main__movie-info span {
+  padding: 7px;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: var(--font-color);
+}
+
+.main__movie-info span.green {
+  color: green;
+}
+
+.main__movie-info span.orange {
+  color: orange;
+}
+.main__movie-info span.red {
+  color: red;
 }
 
 .main__movie-poster {
@@ -120,7 +149,7 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  animation: shine 8s ease-in-out infinite, backgroundmove 16s linear infinite;
+  animation: shine 8s ease-in-out infinite;
   z-index: 5;
 }
 
@@ -173,17 +202,5 @@ body {
   10%, 30%, 50%, 70%, 90%
   {
     opacity: 1;
-  }
-}
-
-@keyframes backgroundmove
-{
-  0%
-  {
-    transform: scale(1);
-  }
-  100%
-  {
-    transform: scale(2);
   }
 }
