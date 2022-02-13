@@ -12,9 +12,23 @@ const error = 'Nothing found for your request';
 async function getData(url) {
   const res = await fetch(url);
   const data = await res.json();
-  showMovies(data.results);
+  const dataResult = data.results;
+  movieContainer.innerHTML = '';
+  if (dataResult.length === 0) {
+    emptyResult();
+  } else {
+    showMovies(dataResult);
+  }
+
 }
 getData(popularLink);
+
+function emptyResult() {
+    const emptyResult = document.createElement("div");
+    emptyResult.classList.add('main__nothing');
+    emptyResult.textContent = 'Nothing found for your request';
+    movieContainer.append(emptyResult);
+}
 
 function showMovies(data) {
   movieContainer.innerHTML = '';
