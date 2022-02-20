@@ -3,3 +3,50 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('./assets/img/image.jpg') no-repeat;
+  background-size: cover;
+}
+
+.main {
+  width: 750px;
+  height:550px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.main__list-card {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main__card,
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__card {
+  width: calc(100%/6 - 10px);
+  height: calc(100%/4 - 10px);
+  background-color: rgba(255, 255, 255, .7);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.image {
+  max-width: 100px;
+}
+
+.main__card-image {
+  display: none;
+}
