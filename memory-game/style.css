@@ -16,8 +16,9 @@ body {
 .main {
   width: 750px;
   height:550px;
-  padding: 20px;
+  padding: 10px;
   border-radius: 15px;
+  background-color: rgba(255, 255, 255, .7);
 }
 
 .main__list-card {
@@ -36,17 +37,39 @@ body {
 }
 
 .main__card {
+  position: relative;
+  perspective: 800px;
+  transform-style: preserve-3d;
   width: calc(100%/6 - 10px);
   height: calc(100%/4 - 10px);
-  background-color: rgba(255, 255, 255, .7);
   cursor: pointer;
-  border-radius: 5px;
 }
 
 .image {
-  max-width: 100px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform .3s linear;
+  background-color: #A2A2D0;
+  border-radius: 5px;
 }
 
-.main__card-image {
-  display: none;
+.main__card-backside {
+  transform: rotateY(-180deg);
 }
+
+.main__card:hover .main__card-frontside {
+  transform: rotateY(-180deg);
+}
+
+.main__card:hover .main__card-backside {
+  transform: rotateY(0);
+}
+
+
+.main__card-image,
+.main__card-cover {
+  max-width: 105px;
+}
+
