@@ -23,12 +23,48 @@ body {
   color: #fff;
 }
 
+.header__title {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__score-table {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: 24px;
+}
+
+.header__table{
+  display: none;
+}
+
+.header__table.table {
+  display: block;
+  width: 210px;
+  height: 300px;
+  position: absolute;
+  top: 253px;
+  border-radius: 10px;
+  background: #A2A2D0;
+  box-shadow:0 0 10px 13px rgba(255, 255, 255, .7);
+  z-index: 10;
+  text-align: center;
+}
+
 .main {
   width: 750px;
   height:550px;
   padding: 10px;
   border-radius: 15px;
   background-color: rgba(255, 255, 255, .7);
+}
+
+.main.table {
+  user-select: none;
 }
 
 .main__screen {
@@ -41,9 +77,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 64px;
+  font-size: 48px;
 }
 
+.main-heading {
+  font-size: 64px;
+}
 
 .main__btn-return.refresh {
   display: block;
