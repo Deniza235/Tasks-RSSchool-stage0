@@ -115,7 +115,7 @@ function shuffleCard() {
   flip.innerText = flips;
 
   let arrCards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  // arrCards.sort(() => Math.random() > .5 ? 1 : -1);
+  arrCards.sort(() => Math.random() > .5 ? 1 : -1);
 
   cards.forEach((card, index) => {
     card.classList.remove('rotate');
