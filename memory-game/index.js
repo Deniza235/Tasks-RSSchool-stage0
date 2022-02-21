@@ -1,8 +1,13 @@
+const main = document.querySelector('.main');
 const cards = document.querySelectorAll('.main__card');
+const listCard = document.querySelector('.main__list-card');
+const screen = document. querySelector('.main__screen');
+const btnRefresh = document.querySelector('.main__btn-return');
+const score = document.querySelector('.main__score');
 let flip = document.querySelector('.header__player-score');
-let time = document.querySelector('.header__time-duration')
+let time = document.querySelector('.header__time-duration');
 let flips = 0;
-let maxTime = 45;
+let maxTime = 90;
 let timeLeft = maxTime;
 let matchedCard = 0;
 let firstCard, secondCard, timer;
@@ -41,7 +46,8 @@ function matchCards(firstImg, secondImg) {
   if( firstImg === secondImg) {
     matchedCard++;
     if(matchedCard === 12 && timeLeft > 0) {
-      return clearInterval(timer);
+      clearInterval(timer);
+      return returnGame();
     }
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
@@ -60,6 +66,13 @@ function matchCards(firstImg, secondImg) {
     firstCard = secondCard = '';
     isDisableDeck = false;
   }, 1200)
+}
+
+function returnGame() {
+  listCard.classList.add('refresh');
+  screen.classList.add('refresh');
+  btnRefresh.classList.add('refresh');
+  score.textContent = `Score: ${flips}`;
 }
 
 function shuffleCard() {
@@ -81,8 +94,16 @@ function shuffleCard() {
     imgNum.src = `./assets/img/img-${arrCards[index]}.webp`
   })
 }
-
 shuffleCard();
+
+btnRefresh.addEventListener('click', () => {
+  listCard.classList.remove('refresh');
+  screen.classList.remove('refresh');
+  btnRefresh.classList.remove('refresh');
+  shuffleCard();
+  flipCard();
+})
+
 
 cards.forEach(card => {
   card.addEventListener('click', flipCard);
