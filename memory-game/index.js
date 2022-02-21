@@ -78,16 +78,24 @@ function returnGame() {
   document.querySelector('.main-heading').textContent = 'You Win!!!';
   score.textContent = `Score: ${flips}`;
   result.push(flips);
+  while(result.length > 10) {
+    result.shift();
+  }
+  console.log(result);
 }
 
 function showScore() {
+  let olList = document.createElement('ol');
   if (result.length === 0) {
-    let olList = document.createElement('ol');
     olList.textContent = 'No game results yet. Let\'s play!';
-    table.append(olList);
-  } /* else 
-    for(let i = 0; i < result.length; i++) */
-  
+  } else {
+    for(let i = 0; i < result.length; i++) {
+      let itemList = document.createElement('li');
+      itemList.textContent = `${i+1}. Player: ${result[i]}`;
+      olList.append(itemList);
+    }
+  }
+  table.append(olList);
 }
 
 function loseGame() {
@@ -132,8 +140,9 @@ cards.forEach(card => {
 
 scoreTable.addEventListener('click', () => {
   table.classList.toggle('table');
+  main.classList.toggle('table');
+  table.innerHTML = "";
   showScore();
-
 })
 
 function getLocalStorage() {
