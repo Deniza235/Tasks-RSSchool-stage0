@@ -1,12 +1,30 @@
 const cards = document.querySelectorAll('.main__card');
-
+let flip = document.querySelector('.header__player-score');
+let time = document.querySelector('.header__time-duration')
+let flips = 0;
+let maxTime = 45;
+let timeLeft = maxTime;
 let matchedCard = 0;
-let firstCard, secondCard;
+let firstCard, secondCard, timer;
 let isDisableDeck = false;
+let isPlay = false;
 
-function flipCard(el) {
-  let clickCard = el.target;
-  if(clickCard !== firstCard && !isDisableDeck) {
+function startTimer() {
+  if(timeLeft === 0) {
+    return clearInterval(timer);
+  }
+  timeLeft--;
+  time.innerText = timeLeft;
+}
+
+function flipCard({target: clickCard}) {
+  if(!isPlay) {
+    isPlay = true;
+    timer = setInterval(startTimer, 1000);
+  }
+  if(clickCard !== firstCard && !isDisableDeck && timeLeft > 0) {
+    flips++;
+    flip.innerText = flips;
     clickCard.classList.add('rotate');
     if(!firstCard) {
       return firstCard = clickCard;
@@ -22,10 +40,8 @@ function flipCard(el) {
 function matchCards(firstImg, secondImg) {
   if( firstImg === secondImg) {
     matchedCard++;
-    if(matchedCard === 12) {
-      setTimeout(() => {
-        return shuffleCard();
-      }, 1000)
+    if(matchedCard === 12 && timeLeft > 0) {
+      return clearInterval(timer);
     }
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
@@ -47,11 +63,17 @@ function matchCards(firstImg, secondImg) {
 }
 
 function shuffleCard() {
-  matchedCard = 0;
-  isDisableDeck = false;
+  timeLeft = maxTime;
+  flips = matchedCard = 0;
+  isDisableDeck = isPlay = false;
   firstCard = secondCard = '';
+  clearInterval(timer);
+  time.innerText = timeLeft;
+  flip.innerText = flips;
+
   let arrCards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  arrCards.sort(() => Math.random() > .5 ? 1 : -1)
+  arrCards.sort(() => Math.random() > .5 ? 1 : -1);
+
   cards.forEach((card, index) => {
     card.classList.remove('rotate');
     card.addEventListener('click', flipCard);
@@ -59,6 +81,7 @@ function shuffleCard() {
     imgNum.src = `./assets/img/img-${arrCards[index]}.webp`
   })
 }
+
 shuffleCard();
 
 cards.forEach(card => {
