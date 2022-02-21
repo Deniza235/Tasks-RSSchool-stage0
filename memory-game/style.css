@@ -31,12 +31,41 @@ body {
   background-color: rgba(255, 255, 255, .7);
 }
 
+.main__screen {
+  display: none;
+}
+
+.main__screen.refresh {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 64px;
+}
+
+
+.main__btn-return.refresh {
+  display: block;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: 2px solid #000;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 24px;
+  background-color: #A2A2D0;
+}
+
 .main__list-card {
   height: 100%;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.main__list-card.refresh {
+  display: none;
 }
 
 .main__card,
@@ -125,4 +154,3 @@ body {
 .footer__logo {
   height: 25px;
 }
-
