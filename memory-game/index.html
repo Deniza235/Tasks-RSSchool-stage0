@@ -5,13 +5,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <title>Memory game</title>
 
 </head>
 <body>
   <header class="header">
-<!-- score, time, name player -->
+    <div class="header__player">
+      <h2 class="header__player-title">Player</h2>
+      <span class="header__player-name">Masha</span>
+
+    </div>
+    <div class="header__title">
+      <h1>Memory Game</h1>
+    </div>
+    <div class="header__time">
+      <h2 class="header__time-title">Time</h2>
+      <span class="header__time-duration">00:00</span>
+    </div>
   </header>
   <main class="main">
     <ul class="main__list-card">
@@ -210,7 +222,11 @@
     </ul>
   </main>
   <footer class="footer">
-
+    <span class="footer__descr">&#169;&nbsp;2022</span>
+    <a href="https://github.com/Deniza235" target="_blank" class="footer__link-github">Deniza235</a>
+    <a href="https://rs.school/js-stage0" target="_blank" class="footer__link-rsschool">
+      <img src="./assets/svg/rs_school_js.svg" alt="logo" class="footer__logo">
+    </a>
   </footer>
   <script src="./index.js"> </script>
 </body>
