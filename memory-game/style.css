@@ -5,6 +5,7 @@
 }
 
 body {
+  font-family: 'Gloria Hallelujah', cursive;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -12,6 +13,14 @@ body {
   align-items: center;
   background: url('./assets/img/image.jpg') no-repeat;
   background-size: cover;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #fff;
 }
 
 .main {
