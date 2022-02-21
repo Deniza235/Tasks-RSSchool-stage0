@@ -7,7 +7,8 @@
 body {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   background: url('./assets/img/image.jpg') no-repeat;
   background-size: cover;
@@ -94,5 +95,25 @@ body {
 .main__card-image,
 .main__card-cover {
   max-width: 105px;
+}
+
+.footer {
+  padding: 5px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, .3);
+}
+
+.footer__link-github {
+  color: black;
+  text-decoration: none;
+}
+
+.footer__logo {
+  height: 25px;
 }
 
