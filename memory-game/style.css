@@ -26,6 +26,11 @@ body {
 .header__title {
   display: flex;
   flex-direction: column;
+  text-align: center;
+}
+
+.header__music {
+  cursor: pointer;
 }
 
 .header__score-table {
