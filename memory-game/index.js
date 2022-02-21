@@ -7,7 +7,7 @@ const score = document.querySelector('.main__score');
 let flip = document.querySelector('.header__player-score');
 let time = document.querySelector('.header__time-duration');
 let flips = 0;
-let maxTime = 90;
+let maxTime = 75;
 let timeLeft = maxTime;
 let matchedCard = 0;
 let firstCard, secondCard, timer;
@@ -16,6 +16,7 @@ let isPlay = false;
 
 function startTimer() {
   if(timeLeft === 0) {
+    loseGame();
     return clearInterval(timer);
   }
   timeLeft--;
@@ -39,7 +40,7 @@ function flipCard({target: clickCard}) {
     let cardFirstImg = firstCard.querySelector('.main__card-image').src;
     let cardSecondImg = secondCard.querySelector('.main__card-image').src;
     matchCards(cardFirstImg, cardSecondImg);
-  }
+  }   
 }
 
 function matchCards(firstImg, secondImg) {
@@ -53,8 +54,7 @@ function matchCards(firstImg, secondImg) {
     secondCard.removeEventListener('click', flipCard);
     firstCard = secondCard = '';
     return isDisableDeck = false;
-  }
-  
+  }   
   setTimeout(() => {
     firstCard.classList.add('shake');
     secondCard.classList.add('shake');
@@ -72,7 +72,15 @@ function returnGame() {
   listCard.classList.add('refresh');
   screen.classList.add('refresh');
   btnRefresh.classList.add('refresh');
+  document.querySelector('.main-heading').textContent = 'You Win!!!';
   score.textContent = `Score: ${flips}`;
+}
+
+function loseGame() {
+  listCard.classList.add('refresh');
+  screen.classList.add('refresh');
+  document.querySelector('.main-heading').textContent = 'You lose =(';
+  btnRefresh.classList.add('refresh');
 }
 
 function shuffleCard() {
