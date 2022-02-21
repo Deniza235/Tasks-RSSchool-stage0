@@ -4,6 +4,8 @@ const listCard = document.querySelector('.main__list-card');
 const screen = document. querySelector('.main__screen');
 const btnRefresh = document.querySelector('.main__btn-return');
 const score = document.querySelector('.main__score');
+const scoreTable = document.querySelector('.header__score-table');
+const table = document.querySelector('.header__table');
 let flip = document.querySelector('.header__player-score');
 let time = document.querySelector('.header__time-duration');
 let flips = 0;
@@ -13,6 +15,7 @@ let matchedCard = 0;
 let firstCard, secondCard, timer;
 let isDisableDeck = false;
 let isPlay = false;
+let result = [];
 
 function startTimer() {
   if(timeLeft === 0) {
@@ -74,6 +77,17 @@ function returnGame() {
   btnRefresh.classList.add('refresh');
   document.querySelector('.main-heading').textContent = 'You Win!!!';
   score.textContent = `Score: ${flips}`;
+  result.push(flips);
+}
+
+function showScore() {
+  if (result.length === 0) {
+    let olList = document.createElement('ol');
+    olList.textContent = 'No game results yet. Let\'s play!';
+    table.append(olList);
+  } /* else 
+    for(let i = 0; i < result.length; i++) */
+  
 }
 
 function loseGame() {
@@ -93,7 +107,7 @@ function shuffleCard() {
   flip.innerText = flips;
 
   let arrCards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  arrCards.sort(() => Math.random() > .5 ? 1 : -1);
+  // arrCards.sort(() => Math.random() > .5 ? 1 : -1);
 
   cards.forEach((card, index) => {
     card.classList.remove('rotate');
@@ -109,10 +123,29 @@ btnRefresh.addEventListener('click', () => {
   screen.classList.remove('refresh');
   btnRefresh.classList.remove('refresh');
   shuffleCard();
-  flipCard();
 })
 
 
 cards.forEach(card => {
   card.addEventListener('click', flipCard);
 })
+
+scoreTable.addEventListener('click', () => {
+  table.classList.toggle('table');
+  showScore();
+
+})
+
+function getLocalStorage() {
+  if(localStorage.getItem('result')) {
+    const res = localStorage.getItem('result');
+    result = JSON.parse(res);
+  }
+}
+
+function setLocalStorage() {
+  localStorage.setItem('result', JSON.stringify(result));
+}
+
+window.addEventListener('load', getLocalStorage);
+window.addEventListener('beforeunload', setLocalStorage);
