@@ -106,6 +106,7 @@ function loseGame() {
   listCard.classList.add('refresh');
   screen.classList.add('refresh');
   document.querySelector('.main-heading').textContent = 'You lose =(';
+  score.textContent = `Score: ${flips}`;
   btnRefresh.classList.add('refresh');
 }
 
