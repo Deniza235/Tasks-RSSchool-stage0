@@ -106,6 +106,7 @@ function loseGame() {
   listCard.classList.add('refresh');
   screen.classList.add('refresh');
   document.querySelector('.main-heading').textContent = 'You lose =(';
+  score.textContent = `Score: ${flips}`;
   btnRefresh.classList.add('refresh');
 }
 
@@ -153,7 +154,7 @@ function getMusic() {
   music = new Audio();
   music.src = './assets/audio/music.mp3';
   music.loop = true;
-  music.volume = .3;
+  music.volume = .1;
 }
 
 function playPause() {
