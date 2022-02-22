@@ -154,7 +154,7 @@ function getMusic() {
   music = new Audio();
   music.src = './assets/audio/music.mp3';
   music.loop = true;
-  music.volume = .1;
+  music.volume = .3;
 }
 
 function playPause() {
