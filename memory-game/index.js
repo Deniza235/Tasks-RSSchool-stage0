@@ -17,7 +17,7 @@ let firstCard, secondCard, timer, music;
 let isDisableDeck = false;
 let isPlay = false;
 let isPlayMusic = false;
-let result = [];
+let resultTractorGame = [];
 
 
 
@@ -81,21 +81,21 @@ function returnGame() {
   btnRefresh.classList.add('refresh');
   document.querySelector('.main-heading').textContent = 'You Win!!!';
   score.textContent = `Score: ${flips}`;
-  result.push(flips);
-  while(result.length > 10) {
-    result.shift();
+  resultTractorGame.push(flips);
+  while(resultTractorGame.length > 10) {
+    resultTractorGame.shift();
   }
-  console.log(result);
+  console.log(resultTractorGame);
 }
 
 function showScore() {
   let olList = document.createElement('ol');
-  if (result.length === 0) {
+  if (resultTractorGame.length === 0) {
     olList.textContent = 'No game results yet. Let\'s play!';
   } else {
-    for(let i = 0; i < result.length; i++) {
+    for(let i = 0; i < resultTractorGame.length; i++) {
       let itemList = document.createElement('li');
-      itemList.textContent = `${i+1}. Player: ${result[i]}`;
+      itemList.textContent = `${i+1}. Player: ${resultTractorGame[i]}`;
       olList.append(itemList);
     }
   }
@@ -175,14 +175,14 @@ musicBtn.addEventListener('click', () => {
 getMusic();
 
 function getLocalStorage() {
-  if(localStorage.getItem('result')) {
-    const res = localStorage.getItem('result');
-    result = JSON.parse(res);
+  if(localStorage.getItem('resultTractorGame')) {
+    const res = localStorage.getItem('resultTractorGame');
+    resultTractorGame = JSON.parse(res);
   }
 }
 
 function setLocalStorage() {
-  localStorage.setItem('result', JSON.stringify(result));
+  localStorage.setItem('resultTractorGame', JSON.stringify(resultTractorGame));
 }
 
 window.addEventListener('load', getLocalStorage);
