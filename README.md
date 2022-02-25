@@ -1,10 +1,10 @@
 # deniza235-JSFEPRESCHOOL
 Private repository for @deniza235
 
-https://rolling-scopes-school.github.io/deniza235-JSFEPRESCHOOL/portfolio/
+https://deniza235.github.io/Tasks-RSSchool-stage0//portfolio/
 
-https://rolling-scopes-school.github.io/deniza235-JSFEPRESCHOOL/audio-player/
+https://deniza235.github.io/Tasks-RSSchool-stage0//audio-player/
 
-https://rolling-scopes-school.github.io/deniza235-JSFEPRESCHOOL/movie-app/
+https://deniza235.github.io/Tasks-RSSchool-stage0//movie-app/
 
-https://rolling-scopes-school.github.io/deniza235-JSFEPRESCHOOL/memory-game/
+https://deniza235.github.io/Tasks-RSSchool-stage0//memory-game/
